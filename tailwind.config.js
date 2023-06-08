@@ -9,7 +9,12 @@ export default {
       jost: "Jost",
       allison: "Allison",
     },
-    extend: {},
+    extend: {
+      backgroundImage: {
+        homeBg: "url('/src/assets/homeBg.jpg')",
+        bannerBg: "url('/src/assets/BannerImg.jpg')",
+      },
+    },
   },
   plugins: [],
 };
