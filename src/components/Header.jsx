@@ -1,8 +1,11 @@
 import React from 'react'
+import Banner from '../utils/Banner'
 
 const Header = () => {
   return (
-    <div>Header</div>
+    <div>
+      <Banner/>
+    </div>
   )
 }
 
