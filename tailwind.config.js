@@ -13,6 +13,7 @@ export default {
       backgroundImage: {
         homeBg: "url('/src/assets/homeBg.jpg')",
         bannerBg: "url('/src/assets/BannerImg.jpg')",
+        contactBg: "url('/src/assets/contactBg.jpg')"
       },
     },
   },

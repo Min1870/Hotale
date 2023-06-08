@@ -5,7 +5,7 @@ const Banner = () => {
   const [toggleNum, setToggleNum] = useState(false);
 
   return (
-    <div className="relative h-[1011px]">
+    <div className="relative h-screen">
       <div>
         <div className=" absolute top-0 bg-homeBg w-full h-screen md:bg-center bg-cover bg-no-repeat rounded-[20px] bg-bottom"></div>
         <div className=" custom-gradient_top h-[344px] top-0 absolute w-full  rounded-[20px]"></div>
