@@ -4,6 +4,7 @@ import { BsTelephone } from "react-icons/bs";
 import { HiOutlineMail } from "react-icons/hi";
 import logo from "../assets/logo.png";
 import { NavLink } from "react-router-dom";
+import Button from "./Button";
 
 const Banner = () => {
   const [toggleNum, setToggleNum] = useState(false);
@@ -49,7 +50,8 @@ const Banner = () => {
                 <IoMdArrowDropdown/>
               </div>
               <div>
-                <button className=" bg-transparent border-2 text-white border-white px-5 py-3 font-semibold text-[13px] tracking-[2px]">BOOK NOW</button>
+                <Button text="BOOK NOW"/>
+                {/* <button className=" bg-transparent border-2 text-white border-white px-5 py-3 font-semibold text-[13px] tracking-[2px]">BOOK NOW</button> */}
               </div>
             </div>
           </div>
