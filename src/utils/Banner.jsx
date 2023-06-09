@@ -1,16 +1,12 @@
-import { useState } from "react";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { BsTelephone } from "react-icons/bs";
 import { HiOutlineMail } from "react-icons/hi";
 import logo from "../assets/logo.png";
 import { NavLink } from "react-router-dom";
 import Button from "./Button";
+import CustomDropdown from "./CustomDropdown";
 
 const Banner = () => {
-  const [toggleNum, setToggleNum] = useState(false);
-  
-  
-
   return (
     <>
       <div className="relative h-[120vh]">
@@ -27,18 +23,17 @@ const Banner = () => {
               </div>
             </div>
             <div className=" text-white flex gap-5">
-              <button className=" bg-transparent border-r-2 px-5">Login</button>
-              <button>Sign Up</button>
+              <button className=" bg-transparent border-r-2 px-4 font-medium">
+                Login
+              </button>
+              <button className="font-medium">Sign Up</button>
             </div>
           </div>
           <div className="hidden lg:flex min-w-full items-center absolute z-50 text-black px-[40px] xl:px-[120px] justify-between top-20">
             <img src={logo} alt="" className="w-[147px] h-[37px] mb-3" />
             <div className="flex gap-10 text-white tracking-widest text-[13px] font-semibold">
-              <NavLink>HOME</NavLink>
-              <NavLink>
-                PAGES
-
-              </NavLink>
+              <NavLink to={"/"}>HOME</NavLink>
+              <CustomDropdown/>
               <NavLink>ROOMS</NavLink>
               <NavLink>RESERVATION</NavLink>
               <NavLink>BLOG</NavLink>
@@ -47,10 +42,10 @@ const Banner = () => {
             <div className="flex items-center gap-8 text-white">
               <div className=" flex items-center gap-2">
                 <div className="">USD</div>
-                <IoMdArrowDropdown/>
+                <IoMdArrowDropdown />
               </div>
               <div>
-                <Button text="BOOK NOW"/>
+                <Button text="BOOK NOW" />
                 {/* <button className=" bg-transparent border-2 text-white border-white px-5 py-3 font-semibold text-[13px] tracking-[2px]">BOOK NOW</button> */}
               </div>
             </div>
