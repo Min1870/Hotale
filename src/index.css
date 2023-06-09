@@ -3,3 +3,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.custom-gradient_top {
+  background-image: linear-gradient(rgba(0, 0, 0, 100), rgba(0, 0, 0, 0));
+}
+
+.custom-gradient_bottom {
+  background-image: linear-gradient(
+    to top, rgba(0, 0, 0, 100),
+    rgba(0, 0, 0, 0)
+  );
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
+  width: 15px;
+  padding: 0px;
+  margin: 0px;
+  margin-top: 10px;
+}
+
+
+
+
+

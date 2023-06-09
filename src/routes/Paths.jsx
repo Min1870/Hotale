@@ -15,7 +15,7 @@ import OurTeamDetail from "../pages/OurTeamDetail";
 
 const Paths = () => {
   return (
-    <div className=" font-jost">
+    <div className=" font-jost px-5 py-5">
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
