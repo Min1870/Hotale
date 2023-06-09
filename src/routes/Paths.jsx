@@ -21,7 +21,7 @@ const Paths = () => {
           <Route index element={<Home />} />
           <Route path="about-us" element={<About />} />
           <Route path="our-team" element={<OurTeam />} />
-          <Route path="our-team-person/:id" element={<OurTeamDetail/>}/>
+          <Route path="our-team-member/:id" element={<OurTeamDetail/>}/>
           <Route path="hotel-review" element={<HotelReview />} />
           <Route path="rooms" element={<Rooms />} />
           <Route path="roomsDetails/:id" element={<RoomsDetails />} />

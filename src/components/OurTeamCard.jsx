@@ -1,9 +1,11 @@
 import React from "react";
 import { FaFacebookF, FaLinkedinIn, FaTwitter } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const OurTeamCard = ({member}) => {
   return (
     <div className=" space-y-8 max-w-[400px] sm:mx-auto mx-5">
+      <Link to={`/our-team-member/${member.id}`}>
       <div className=" rounded-[20px] overflow-hidden">
         <img
           className="rounded-[20px]  hover:scale-110 transition duration-500"
@@ -11,6 +13,7 @@ const OurTeamCard = ({member}) => {
           alt=""
         />
       </div>
+      </Link>
       <div className=" flex flex-col items-center">
         <h1 className=" text-[#191919] font-[500] text-[26px] mb-3">
           {member?.name}
