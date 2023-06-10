@@ -1,50 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import OurTeamCard from "../components/OurTeamCard";
 import {BsSend} from 'react-icons/bs'
+import OurTeamBanner from "../components/OurTeamBanner";
+import LoginModal from '../components/LoginModal'
+import SignupModal from '../components/SignupModal'
+import {teamMembers} from "../utils/teamMember"
 
-const teamMembers = [
-  {
-    id: 1,
-    name: "Jane Smith", 
-    position: "CEO & Founder",
-    image: "https://a6e8z9v6.stackpathcdn.com/hotale/resort/wp-content/uploads/sites/2/2021/02/personnel-1-600x600.jpg",
-  },
-  {
-    id: 2,
-    name: "Paul Smith", 
-    position: "General Manager",
-    image: "https://a6e8z9v6.stackpathcdn.com/hotale/resort/wp-content/uploads/sites/2/2021/02/personnel-2-600x600.jpg",
-  },
-  {
-    id: 3,
-    name: "Alisa Doe", 
-    position: "Chief Financial Officer",
-    image: "https://a6e8z9v6.stackpathcdn.com/hotale/resort/wp-content/uploads/sites/2/2021/02/personnel-3-600x600.jpg",
-  },
-  {
-    id: 4,
-    name: "Saul Goodman", 
-    position: "Building Manager",
-    image: "https://a6e8z9v6.stackpathcdn.com/hotale/resort/wp-content/uploads/sites/2/2021/02/personnel-4-600x600.jpg",
-  },
-  {
-    id: 5,
-    name: "David Wick", 
-    position: "Hr Manager",
-    image: "https://a6e8z9v6.stackpathcdn.com/hotale/resort/wp-content/uploads/sites/2/2021/02/personnel-5-600x600.jpg",
-  },
-  {
-    id: 6,
-    name: "John Doe", 
-    position: "Marking Leader",
-    image: "https://a6e8z9v6.stackpathcdn.com/hotale/resort/wp-content/uploads/sites/2/2021/02/personnel-6-600x600.jpg",
-  },
-]
 
 const OurTeam = () => {
+  const [openLoginModal, setOpenLoginModal] = useState(false)
+  const [openSignUpModal, setOpenSignUpModal] = useState(false)
   return (
-    <div className="mx-5">
-      <div>Banner goes here</div>
+    <>
+    {openLoginModal && <LoginModal setOpenLoginModal={setOpenLoginModal}/>}
+    {openSignUpModal && <SignupModal setOpenSignUpModal={setOpenSignUpModal}/>}
+    <div className="">
+      <OurTeamBanner openLoginModal={openLoginModal} setOpenLoginModal={setOpenLoginModal} openSignUpModal={openSignUpModal} setOpenSignUpModal={setOpenSignUpModal}/>
       <div className=" mt-20 md:mx-10 grid md:grid-cols-2 lg:grid-cols-3 gap-10">
         {teamMembers?.map(member => (
           <OurTeamCard key={member.id} member={member}/>
@@ -64,6 +35,7 @@ const OurTeam = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

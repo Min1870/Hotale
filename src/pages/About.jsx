@@ -1,11 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import BtnAbout from "../components/BtnAbout";
+import AboutUsBanner from "../components/AboutUsBanner";
+import LoginModal from "../components/LoginModal";
+import SignupModal from "../components/SignupModal";
 
 const About = () => {
+  const [openLoginModal, setOpenLoginModal] = useState(false)
+  const [openSignUpModal, setOpenSignUpModal] = useState(false)
   return (
-    <div className="mx-5">
-      <div>Banner goes here</div>
-      <div className=" py-[50px] mx-auto space-y-5 text-center w-[80%] md:w-[55%]">
+    <>
+    {openLoginModal && <LoginModal setOpenLoginModal={setOpenLoginModal}/>}
+    {openSignUpModal && <SignupModal setOpenSignUpModal={setOpenSignUpModal}/>}
+    <div className="">
+      <AboutUsBanner openLoginModal={openLoginModal} setOpenLoginModal={setOpenLoginModal} openSignUpModal={openSignUpModal} setOpenSignUpModal={setOpenSignUpModal}>
+        <div className=" text-center text-white h-[300px] lg:mb-10 flex flex-col items-center justify-center space-y-5 md:max-w-[60%] mx-auto">
+            <h1 className=" text-[40px] md:text-[70px] font-[400]">About Us</h1>
+            
+          </div>
+      </AboutUsBanner>
+      <div className=" py-[50px] md:py-[75px] mx-auto space-y-5 text-center w-[80%] md:w-[55%]">
         <h1 className=" font-allison text-[55px] lg:text-[80px] leading-[66px]">
           Visit Our Famous Facilities
         </h1>
@@ -144,6 +157,7 @@ const About = () => {
 
       
     </div>
+    </>
   );
 };
 
