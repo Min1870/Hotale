@@ -6,7 +6,7 @@ import Button from "./Button";
 import { IoMdArrowDropdown } from "react-icons/io";
 import CustomDropdown from "./CustomDropdown";
 
-const BannerForAll = ({text}) => {
+const BannerForAll = ({ text, desc }) => {
   return (
     <>
       <div className="relative h-[20vh] md:min-h-[30vh] lg:h-[65vh]">
@@ -32,12 +32,12 @@ const BannerForAll = ({text}) => {
           <div className="hidden lg:flex min-w-full items-center absolute z-50 text-black px-[40px] xl:px-[120px] justify-between top-24">
             <img src={logo} alt="" className="w-[147px] h-[37px] mb-3" />
             <div className="flex gap-10 text-white tracking-widest text-[13px] font-semibold">
-              <NavLink>HOME</NavLink>
-              <CustomDropdown/>
-              <NavLink>ROOMS</NavLink>
-              <NavLink>RESERVATION</NavLink>
-              <NavLink>BLOG</NavLink>
-              <NavLink>CONTACT</NavLink>
+              <NavLink to={"/"}>HOME</NavLink>
+              <CustomDropdown />
+              <NavLink to={"/rooms"}>ROOMS</NavLink>
+              <NavLink to={"/reservation"}>RESERVATION</NavLink>
+              <NavLink to={"/blogs"}>BLOG</NavLink>
+              <NavLink to={"/contact"}>CONTACT</NavLink>
             </div>
             <div className="flex items-center gap-8 text-white">
               <div className=" flex items-center gap-2">
@@ -59,6 +59,7 @@ const BannerForAll = ({text}) => {
             <h1 className=" text-[40px] md:text-[70px] text-white font-light">
               {text}
             </h1>
+            <p className=" text-[15px] md:text-[31px] text-white font-light">{desc}</p>
           </div>
         </div>
         <div></div>
@@ -68,7 +69,8 @@ const BannerForAll = ({text}) => {
 };
 
 BannerForAll.defaultProps = {
-    text: "About Us"
-}
+  text: "About Us",
+  desc: "",
+};
 
 export default BannerForAll;

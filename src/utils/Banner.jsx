@@ -34,10 +34,10 @@ const Banner = () => {
             <div className="flex gap-10 text-white tracking-widest text-[13px] font-semibold">
               <NavLink to={"/"}>HOME</NavLink>
               <CustomDropdown/>
-              <NavLink>ROOMS</NavLink>
-              <NavLink>RESERVATION</NavLink>
-              <NavLink>BLOG</NavLink>
-              <NavLink>CONTACT</NavLink>
+              <NavLink to={"/rooms"}>ROOMS</NavLink>
+              <NavLink to={"/reservation"}>RESERVATION</NavLink>
+              <NavLink to={"/blogs"}>BLOG</NavLink>
+              <NavLink to={"/contact"}>CONTACT</NavLink>
             </div>
             <div className="flex items-center gap-8 text-white">
               <div className=" flex items-center gap-2">
