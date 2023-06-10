@@ -18,26 +18,26 @@ const AboutUsBanner = ({
         <div className=" text-white">
           <div className=" pt-8 px-10 space-y-10 hidden lg:block">
             <div className=" flex items-center justify-between">
-              <div className="flex items-center gap-10">
-                <div className="flex items-center gap-2 text-[16px]">
+              <div className="flex items-center gap-10 text-[15px] font-[400] tracking-[1px]">
+                <div className="flex items-center gap-2">
                   <BsTelephone />
                   <span>1-634-567-34</span>
                 </div>
-                <div className="flex items-center gap-2 text-[16px]">
+                <div className="flex items-center gap-2">
                   <HiOutlineMail size={15} />
                   <span>Book@Hotale.co</span>
                 </div>
               </div>
-              <div className=" flex gap-5">
+              <div className=" flex gap-5 text-[15px] font-[600] tracking-[1px]">
                 <button
                   onClick={() => setOpenLoginModal(!openLoginModal)}
-                  className=" bg-transparent border-r-2 px-4 font-medium"
+                  className=" bg-transparent border-r-2 px-4"
                 >
                   Login
                 </button>
                 <button
                   onClick={() => setOpenSignUpModal(!openSignUpModal)}
-                  className=" font-medium"
+                  className=""
                 >
                   Sign Up
                 </button>
@@ -52,7 +52,7 @@ const AboutUsBanner = ({
                   className="w-[147px] h-[37px] mb-3 cursor-pointer"
                 />
               </Link>
-              <div className=" flex items-center gap-10">
+              <div className=" flex items-center gap-10 text-[13px] font-[600] tracking-[2px]">
                 <NavLink to={`/`} className="cursor-pointer">
                   HOME
                 </NavLink>
@@ -66,7 +66,7 @@ const AboutUsBanner = ({
                     <div className="">USD</div>
                     <IoMdArrowDropdown />
                   </div>
-                  <div className=" cursor-pointer">
+                  <div className=" cursor-pointer text-[13px] font-[600] tracking-[2px]">
                     <Button text="BOOK NOW" />
                   </div>
                 </div>
