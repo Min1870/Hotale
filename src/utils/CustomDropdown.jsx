@@ -12,7 +12,7 @@ const CustomDropdown = () => {
   const handleDropdownClose = () => {
     closeTimeoutRef.current = setTimeout(() => {
       setIsDropdownOpen(false);
-    }, 200); // Adjust the delay duration as needed
+    }, 200);
   };
 
   const handleDropdownCancelClose = () => {
