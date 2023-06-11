@@ -3,6 +3,7 @@ import RoomCard from "../utils/RoomCard";
 import LoginModal from '../components/LoginModal'
 import SignupModal from '../components/SignupModal'
 import AboutUsBanner from '../components/AboutUsBanner'
+import { rooms } from "../utils/rooms";
 
 const Rooms = () => {
   const [openLoginModal, setOpenLoginModal] = useState(false)
@@ -24,16 +25,10 @@ const Rooms = () => {
           </h1>
         </div>
       </AboutUsBanner>
-      <div className="flex flex-wrap mt-20 items-center justify-center gap-10">
-        <RoomCard />
-        <RoomCard />
-        <RoomCard />
-        <RoomCard />
-        <RoomCard />
-        <RoomCard />
-        <RoomCard />
-        <RoomCard />
-        <RoomCard />
+      <div className="flex flex-wrap my-20 items-center justify-center gap-10">
+        {rooms.map((room) => (
+          <RoomCard key={room.id} room={room}/>
+        ))}
       </div>
     </div>
     </>
