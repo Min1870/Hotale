@@ -25,6 +25,32 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   margin-top: 10px;
 }
 
+.hover-underline-animation_room {
+  @apply inline-flex relative;
+}
+
+.hover-underline-animation_room::after {
+  @apply absolute inline-flex w-full transform scale-x-0 h-[1.5px] bottom-0 left-0 bg-[#848484]/60 origin-bottom-left transition-transform duration-200 ease-out;
+  content: '';
+}
+
+.hover-underline-animation_room:hover::after {
+  @apply transform scale-x-100 origin-bottom-left;
+}
+
+.hover-underline-animation_blog {
+  @apply inline-flex relative;
+}
+
+.hover-underline-animation_blog::after {
+  @apply absolute inline-flex w-full transform scale-x-0 h-[1px] bottom-1 left-0 bg-[#848484] origin-center transition-transform duration-200 ease-out;
+  content: '';
+}
+
+.hover-underline-animation_blog:hover::after {
+  @apply transform scale-x-100 origin-center;
+}
+
 
 
 
