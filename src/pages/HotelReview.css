@@ -1,0 +1,54 @@
+.top-page.is-active {
+    background-color: black !important;
+    border: 1px solid black !important;
+    padding: 6px;
+    transform: scale(1);
+}
+
+.top-page{
+    background-color: transparent !important;
+    border: 1px solid black !important;
+    padding: 6px !important;
+    transition: .5s;
+}
+
+.top-pagination {
+    margin-bottom: -4rem;
+}
+
+.bottom-pagination  {
+    margin-bottom: 8rem;
+    gap: 3px;
+    
+}
+
+.bottom-page{
+    background-color: white !important;
+    opacity: 1 !important;
+    transition: .5s;
+}
+
+.bottom-page.is-active {
+    background-color: white !important;
+    opacity: 1 !important;
+    transform: scale(1.5);
+}
+
+@media (max-width: 800px) {
+    .bottom-pagination {
+      margin-bottom: 2rem;
+    }
+  }
+
+  @media (max-width: 1000px) {
+    .bottom-pagination {
+      margin-bottom: 4rem;
+    }
+  }
+
+
+
+
+
+
+
