@@ -65,9 +65,9 @@ const Banner = () => {
         <div className=" custom-gradient_top h-[344px] top-0 absolute w-full  rounded-[20px]"></div>
         <div className=" custom-gradient_bottom h-[338px] absolute bottom-0  w-full rounded-[20px]"></div>
 
-        <div className="absolute h-screen md:h-[671px] w-full bottom-0">
+        <div className="absolute h-[115vh] md:h-[671px] w-full bottom-0">
           <div className=" flex flex-col mt-10 items-center ">
-            <div className="">
+            <div className=" absolute top-10">
               <h3 className=" font-allison text-[80px] md:text-[70px] text-center leading-[100px] pb-[30px] text-[#FFF] -rotate-[4deg]">
                 Book Your Vacation
               </h3>
@@ -76,10 +76,10 @@ const Banner = () => {
               </p>
             </div>
 
-            <div className=" absolute bottom-20">
+            <div className=" absolute bottom-5 lg:bottom-20">
               <form className=" flex flex-col md:flex-row gap-3 flex-wrap justify-center">
                 <div className="md:flex gap-3">
-                  <div className=" w-72 bg-white p-3  rounded-md mb-3 md:mb-0">
+                  <div className=" min-w-72 bg-white p-3  rounded-md mb-3 md:mb-0">
                     <div className=" text-[#8f8f8f]">Check In</div>
                     <div className="flex items-center justify-between">
                       <input type="date" />
