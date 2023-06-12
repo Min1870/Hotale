@@ -4,6 +4,9 @@ import { HiOutlineEnvelope } from "react-icons/hi2";
 import { IoMenuSharp } from "react-icons/io5";
 import logo from "../assets/logo.png";
 import Button from "../utils/Button";
+import { NavLink } from "react-router-dom";
+import CustomDropdown from "../utils/CustomDropdown";
+import { IoMdArrowDropdown } from "react-icons/io";
 const Header = () => {
   const [showNav, setShowNav] = useState(false);
   useEffect(() => {
@@ -11,57 +14,11 @@ const Header = () => {
       if (window.scrollY > 100) {
         setShowNav(true);
       }
-      window.scrollY < 100 && setShowNav(false);
+      window.scrollY < 300 && setShowNav(false);
     });
   }, [scrollY]);
   return (
     <>
-      <div className=" text-[#fff] hidden lg:flex flex-col gap-8 w-[85%] mx-auto absolute top-10 lg:left-[80px] xl:left-[120px] z-50">
-        <div className="flex justify-between items-center">
-          <div className="flex items-center gap-3">
-            <p className="flex items-center gap-1">
-              <HiOutlinePhone /> <span>1-634-567-34</span>
-            </p>
-
-            <p className="flex items-center gap-1">
-              <HiOutlineEnvelope />
-              Book@Hotale.co
-            </p>
-          </div>
-          <div className="flex gap-3">
-            <p>Login</p>
-            <p>Sign Up</p>
-          </div>
-        </div>
-        <div className="flex justify-between items-center">
-          <img src={logo} className="h-[37px]"></img>
-          <ul className="flex gap-5">
-            <li>Home</li>
-            <li>Pages</li>
-            <li>Rooms</li>
-            <li>Blog</li>
-            <li>Reservation</li>
-            <li>Contact</li>
-          </ul>
-          <div className="flex gap-3 items-center">
-            <p>USD</p>
-            <Button text={"Book Now"}></Button>
-          </div>
-        </div>
-      </div>
-
-      <div className="bg-[#000] text-[#fff] flex lg:hidden py-5 px-6 md:px-16 z-50">
-        <div className="flex justify-between items-center w-full">
-          <img src={logo} className="h-[37px]"></img>
-
-          <div className="flex items-center gap-3">
-            <p>Login</p>
-            <p>Sign Up</p>
-            <IoMenuSharp className="text-3xl" />
-          </div>
-        </div>
-      </div>
-
       <div
         className={`bg-[#000] fixed top-0 left-0 transition-all duration-500 w-full text-[#fff] z-50 ${
           showNav ? "translate-y-0" : "-translate-y-full"
@@ -69,20 +26,26 @@ const Header = () => {
       >
         <div className="flex justify-between items-center w-[85%] mx-auto py-5">
           <img src={logo} className="h-[37px]"></img>
-          <ul className=" gap-5 hidden lg:flex">
-            <li>Home</li>
-            <li>Pages</li>
-            <li>Rooms</li>
-            <li>Blog</li>
-            <li>Reservation</li>
-            <li>Contact</li>
-          </ul>
-          <div className=" gap-3 items-center hidden lg:flex">
-            <p>USD</p>
-            <Button text={"Book Now"}></Button>
+          <div className=" hidden lg:flex gap-10 text-white tracking-widest text-[13px] font-semibold">
+            <NavLink to={"/"}>HOME</NavLink>
+            <CustomDropdown />
+            <NavLink to={"/rooms"}>ROOMS</NavLink>
+            <NavLink to={"/reservation"}>RESERVATION</NavLink>
+            <NavLink to={"/blogs"}>BLOG</NavLink>
+            <NavLink to={"/contact"}>CONTACT</NavLink>
+          </div>
+          <div className="hidden lg:flex items-center gap-8 text-white">
+            <div className=" flex items-center gap-2">
+              <div className="">USD</div>
+              <IoMdArrowDropdown />
+            </div>
+            <div>
+              <Button text="BOOK NOW" />
+              {/* <button className=" bg-transparent border-2 text-white border-white px-5 py-3 font-semibold text-[13px] tracking-[2px]">BOOK NOW</button> */}
+            </div>
           </div>
           <div className="flex lg:hidden items-center gap-3">
-            <p>Login</p>
+            <p className="px-4 border-r">Login</p>
             <p>Sign Up</p>
             <IoMenuSharp className="text-3xl" />
           </div>
