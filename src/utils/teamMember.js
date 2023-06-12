@@ -36,3 +36,37 @@ export const teamMembers = [
       image: "https://a6e8z9v6.stackpathcdn.com/hotale/resort/wp-content/uploads/sites/2/2021/02/personnel-6-600x600.jpg",
     },
   ]
+
+  export const topReviews = [
+    {
+      id: 1,
+      name: "DONNA WILSON",
+      address: "New York",
+      image: "https://a6e8z9v6.stackpathcdn.com/hotale/resort/wp-content/uploads/sites/2/2021/12/name1-150x150.jpg"
+    },
+    {
+      id: 2,
+      name: "MICHAEL SMITH",
+      address: "Los Angeles",
+      image: "https://a6e8z9v6.stackpathcdn.com/hotale/resort/wp-content/uploads/sites/2/2021/12/name7-150x150.jpg"
+    },
+    {
+      id: 3,
+      name: "CYNTHIA HILL",
+      address: "New York",
+      image : "https://a6e8z9v6.stackpathcdn.com/hotale/resort/wp-content/uploads/sites/2/2021/12/name2-150x150.jpg"
+    },
+    {
+      id: 4,
+      name: "BRANDON CARTER",
+      address: "London",
+      image: "https://a6e8z9v6.stackpathcdn.com/hotale/resort/wp-content/uploads/sites/2/2021/12/name5-150x150.jpg"
+    },
+    {
+      id: 5,
+      name: "Miko",
+      address: "Tokyo",
+      image: "https://a6e8z9v6.stackpathcdn.com/hotale/resort/wp-content/uploads/sites/2/2021/12/name6-150x150.jpg"
+    },
+
+  ]

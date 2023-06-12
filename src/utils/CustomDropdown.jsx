@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import { NavLink } from "react-router-dom";
 
-const CustomDropdown = () => {
+const CustomDropdown = ({setOffsetLeft}) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const closeTimeoutRef = useRef(null);
 
@@ -24,11 +24,11 @@ const CustomDropdown = () => {
   return (
     <div className="relative">
       <div
-        className="cursor-pointer"
+        className="cursor-pointer relative"
         onMouseEnter={handleDropdownToggle}
         onMouseLeave={handleDropdownClose}
       >
-        <NavLink to={"/"}>PAGES</NavLink>
+        <NavLink onMouseEnter={e => setOffsetLeft(e.target.offsetLeft)} to={"/"}>PAGES</NavLink>
       </div>
       {isDropdownOpen && (
         <div
