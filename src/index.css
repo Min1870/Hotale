@@ -16,15 +16,6 @@
   );
 }
 
-input[type="date"]::-webkit-calendar-picker-indicator {
-  display: none;
-  -webkit-appearance: none;
-  width: 15px;
-  padding: 0px;
-  margin: 0px;
-  margin-top: 10px;
-}
-
 .hover-underline-animation_room {
   @apply inline-flex relative;
 }
