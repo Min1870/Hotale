@@ -5,11 +5,22 @@ import logo from "../assets/logo.png";
 import { NavLink } from "react-router-dom";
 import Button from "./Button";
 import CustomDropdown from "./CustomDropdown";
+import { IoMenuSharp } from "react-icons/io5";
 
 const Banner = () => {
   return (
     <>
-      <div className="relative h-[120vh]">
+      {/* Mobile Navbar */}
+      <div className="lg:hidden flex min-w-full items-center justify-between py-5 px-[40px] xl:px-[120px] text-white bg-black z-50 absolute top-0 left-0">
+        <img src={logo} alt="" className="w-[147px] h-[37px]" />
+        <div className="flex items-center gap-3">
+          <p className="border-r px-4">Login</p>
+          <p>Sign Up</p>
+          <IoMenuSharp className="text-3xl" />
+        </div>
+      </div>
+      <div className="relative h-[120vh] mt-28 lg:m-0">
+        {/* Laptop Navbar */}
         <div className=" absolute top-0 bg-homeBg w-full h-full bg-center bg-cover bg-no-repeat rounded-[20px]">
           <div className="hidden lg:flex min-w-full items-center justify-between absolute z-50 text-black px-[40px] xl:px-[120px] top-8">
             <div className=" text-white flex items-center gap-5">
@@ -31,9 +42,9 @@ const Banner = () => {
           </div>
           <div className="hidden lg:flex min-w-full items-center absolute z-50 text-black px-[40px] xl:px-[120px] justify-between top-20">
             <img src={logo} alt="" className="w-[147px] h-[37px] mb-3" />
-            <div className="flex gap-10 text-white tracking-widest text-[13px] font-semibold">
+            <div className="flex gap-10 text-white tracking-widest text-[13px] font-semibold ">
               <NavLink to={"/"}>HOME</NavLink>
-              <CustomDropdown/>
+              <CustomDropdown />
               <NavLink to={"/rooms"}>ROOMS</NavLink>
               <NavLink to={"/reservation"}>RESERVATION</NavLink>
               <NavLink to={"/blogs"}>BLOG</NavLink>

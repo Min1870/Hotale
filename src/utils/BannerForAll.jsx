@@ -59,7 +59,9 @@ const BannerForAll = ({ text, desc }) => {
             <h1 className=" text-[40px] md:text-[70px] text-white font-light">
               {text}
             </h1>
-            <p className=" text-[15px] md:text-[31px] text-white font-light">{desc}</p>
+            <p className=" text-[15px] md:text-[31px] text-white font-light">
+              {desc}
+            </p>
           </div>
         </div>
         <div></div>

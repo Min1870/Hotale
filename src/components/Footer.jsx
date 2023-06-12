@@ -5,7 +5,7 @@ import footerCard from "../assets/footer-cards.png";
 import { FaFacebookF, FaPinterestP, FaTiktok, FaTwitter } from "react-icons/fa";
 const Footer = () => {
   return (
-    <div className="bg-[#000] text-[#fff] rounded-3xl px-8 md:px-20 pt-20 pb-10 mx-5 mb-5">
+    <div className="bg-[#000] text-[#fff] rounded-3xl px-8 md:px-20 pt-20 pb-10 mx-5 mb-5 mt-[500px]">
       <div className="grid grid-cols-12 gap-5">
         <div className="col-span-12 md:col-span-6 xl:col-span-3 flex flex-col gap-8">
           <img src={footerLogo} alt="" width="110" height="27" />
