@@ -4,11 +4,17 @@ import SignupModal from "../components/SignupModal";
 import LoginModal from "../components/LoginModal";
 import HotelReviewCard from "../components/HotelReviewCard";
 import { useNavigate } from "react-router-dom";
+import "@splidejs/react-splide/css";
+import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
+import "./HotelReview.css";
+import Review from "../components/Review";
+import { topReviews } from "../utils/teamMember";
 
 const HotelReview = () => {
   const [openLoginModal, setOpenLoginModal] = useState(false);
   const [openSignUpModal, setOpenSignUpModal] = useState(false);
   const navigate = useNavigate();
+
   return (
     <>
       {openLoginModal && <LoginModal setOpenLoginModal={setOpenLoginModal} />}
@@ -37,12 +43,44 @@ const HotelReview = () => {
           </h1>
           <div className=" bg-[#0a0a0a] w-[100px] h-[3px] mb-4 md:mb-8"></div>
         </div>
-        <div className=" mx-10 grid grid-cols-3 gap-10 py-[50px]">
-          <HotelReviewCard />
-          <HotelReviewCard />
-          <HotelReviewCard />
+        <div className=" pb-[100px] mx-10">
+          {/* Slider  */}
+          <Splide
+            hasTrack={false}
+            className=" overflow-visible"
+            options={{
+              perPage: 3,
+              focus: 0,
+              omitEnd: true,
+              gap: 20,
+              arrows: false,
+              pagination: true,
+              preloadPages: 2,
+              classes: {
+                pagination: "splide__pagination top-pagination",
+                page: "splide__pagination__page top-page",
+              },
+              breakpoints: {
+                780: {
+                  perPage: 2,
+                },
+                540: {
+                  perPage: 1,
+                  type: "fade",
+                },
+              },
+            }}
+          >
+            <SplideTrack>
+              {topReviews?.map((review) => (
+                <SplideSlide className="pt-10" key={review.id}>
+                  <HotelReviewCard review={review} />
+                </SplideSlide>
+              ))}
+            </SplideTrack>
+          </Splide>
         </div>
-        <div className=" py-[50px] grid md:grid-cols-2 min-h-[100vh]">
+        <div className=" py-[50px] md:grid md:grid-cols-2 flex flex-col md:min-h-[100vh]">
           <div className=" h-full">
             <img
               className=" h-full object-cover"
@@ -50,20 +88,26 @@ const HotelReview = () => {
               alt=""
             />
           </div>
-          <div className=" bg-[#2C2D39] flex flex-col items-center justify-center py-20 md:py-0 px-10 sm:px-20 text-center">
-            <p className=" text-[#898989] text-[18px] leading-[30px] mb-5">
-              “The rooms were clean, very comfortable, and the staff was
-              amazing. They went over and beyond to help make our stay
-              enjoyable. I highly recommend this hotel for anyone visiting
-              downtown.”
-            </p>
-            <h4 className="text-[#fff] text-[18px] font-[500] leading-[30px]">
-              Vincent Smith
-            </h4>
-            <h4 className=" text-[#fff] text-[16px] leading-[30px]">
-              New York
-            </h4>
-          </div>
+          {/* <Review/> */}
+
+          <Splide
+            className=" overflow-visible"
+            options={{
+              perPage: 1,
+              arrows: false,
+              pagination: true,
+              classes: {
+                pagination: "splide__pagination bottom-pagination",
+                page: "splide__pagination__page bottom-page",
+              },
+            }}
+          >
+            {topReviews?.map((review) => (
+              <SplideSlide key={review.id}>
+                <Review review={review} />
+              </SplideSlide>
+            ))}
+          </Splide>
         </div>
 
         <div className=" py-[50px] grid md:grid-cols-2 px-10 gap-20 md:gap-10">
