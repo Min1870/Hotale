@@ -14,3 +14,12 @@
   height: 12px;
   background-color: #000;
 }
+#customArrow .splide__arrow svg {
+  height: 5rem;
+}
+#customArrow .splide__arrow--next {
+  right: -5%;
+}
+#customArrow .splide__arrow--prev {
+  left: -5%;
+}

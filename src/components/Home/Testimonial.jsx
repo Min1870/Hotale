@@ -3,7 +3,7 @@ import TitlePara from "../../utils/TitlePara";
 import { VscQuote } from "react-icons/vsc";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css/core";
-import "./pagination.css";
+import "./customSplide.css";
 const Testimonial = () => {
   const testimonials = [
     {
@@ -89,7 +89,7 @@ const Testimonial = () => {
         >
           {testimonials.map((testimonial) => {
             return (
-              <SplideSlide>
+              <SplideSlide key={testimonial.id}>
                 <div className="py-16 mx-3 rounded-tl-[50px] rounded-br-[50px] flex flex-col lg:flex-row items-center lg:items-start justify-center gap-8 bg-white shadow-xl my-10">
                   <div className="relative">
                     <div className="w-24 h-24 overflow-hidden rounded-full ">
