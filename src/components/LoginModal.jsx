@@ -1,5 +1,6 @@
 import React from "react";
 import { RxCross1 } from "react-icons/rx";
+import { motion } from "framer-motion";
 
 const LoginModal = ({ setOpenLoginModal }) => {
   const closeLoginModal = (e) => {
@@ -8,7 +9,11 @@ const LoginModal = ({ setOpenLoginModal }) => {
     }
   };
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
       onClick={closeLoginModal}
       className="backdrop select-none bg-[#00000060] flex justify-center items-center h-screen fixed top-0 left-0 right-0 z-50 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0  max-h-full"
     >
@@ -76,7 +81,7 @@ const LoginModal = ({ setOpenLoginModal }) => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -1,8 +1,9 @@
 import React from "react";
 import { FaFacebookF, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
-const OurTeamCard = ({member}) => {
+const OurTeamCard = ({member, index}) => {
   return (
     <div className=" space-y-8 max-w-[400px] sm:mx-auto mx-5">
       <Link to={`/our-team-member/${member.id}`}>

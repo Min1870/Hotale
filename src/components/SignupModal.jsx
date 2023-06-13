@@ -1,18 +1,110 @@
 import React from "react";
 import { RxCross1 } from "react-icons/rx";
 import { IoMdArrowDropdown } from "react-icons/io";
+import { motion } from "framer-motion";
 
 const SignupModal = ({ setOpenSignUpModal }) => {
-
   const closeSignUpModal = (e) => {
-    if(e.target.classList.contains('backdrop')){
-      setOpenSignUpModal(false)
+    if (e.target.classList.contains("backdrop")) {
+      setOpenSignUpModal(false);
     }
-  }
+  };
+  const days = [
+    "Date",
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+  ];
+  const months = [
+    "Month",
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  const years = [
+    "Year",
+    2023,
+    2022,
+    2021,
+    2020,
+    2019,
+    2018,
+    2017,
+    2016,
+    2015,
+    2014,
+    2013,
+    2012,
+    2011,
+    2010,
+    2009,
+    2008,
+    2007,
+    2006,
+    2005,
+    2004,
+    2003,
+    2002,
+    2001,
+    2000,
+  ];
+  const nations = [
+    "United State of America(USA)",
+    "China",
+    "Thailand",
+    "Myanmar",
+    "Korea",
+    "Japan",
+    "Singapore",
+  ];
   return (
-    <div onClick={closeSignUpModal} className="backdrop select-none bg-[#00000060] overflow-hidden flex justify-center items-center h-screen fixed top-0 left-0 right-0 z-50 w-full">
-      <div className="relative w-[80%] lg:w-[65%] max-h-[90%] overflow-y-scroll">
-        <div className=" bg-white shadow px-8">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
+      onClick={closeSignUpModal}
+      className="backdrop select-none bg-[#00000060] flex justify-center items-center h-screen fixed top-0 left-0 right-0 z-50 w-full"
+    >
+      <div className="relative w-[90%] lg:w-[70%] max-h-[90%] overflow-y-scroll overflow-x-hidden">
+        <div className=" bg-white shadow px-3 md:px-8">
           <div className=" flex justify-between items-center border-b-2 py-5 border-gray-200 rounded-t">
             <span></span>
             <h3 className="uppercase text-[14px] font-[600] tracking-wider text-[#000]">
@@ -47,7 +139,7 @@ const SignupModal = ({ setOpenSignUpModal }) => {
                   className=" outline-none border-2 border-gray-300 px-5 py-3 rounded"
                 />
               </div>
-              <div></div>
+              <div className="hidden md:block"></div>
               <div className=" flex flex-col gap-3">
                 <label
                   htmlFor=""
@@ -103,28 +195,28 @@ const SignupModal = ({ setOpenSignUpModal }) => {
                 >
                   Birth Date*
                 </label>
-                <div className=" flex items-center">
+                <div className=" flex md:flex-row flex-wrap gap-8 md:gap-4">
                   <div className=" flex items-center mr-7">
                     <select className=" appearance-none outline-none py-3 px-4 border-2 border-gray-300 rounded w-[80px]">
-                      <option value="">Date</option>
-                      <option value="">aaa</option>
-                      <option value="">aaa</option>
+                      {days?.map((day) => (
+                        <option value="">{day}</option>
+                      ))}
                     </select>
                     <IoMdArrowDropdown className=" -ml-[25px]" />
                   </div>
                   <div className=" flex items-center mr-14">
                     <select className=" appearance-none outline-none py-3 px-4 border-2 border-gray-300 rounded w-[110px]">
-                      <option value="">Month</option>
-                      <option value="">aaa</option>
-                      <option value="">aaa</option>
+                    {months?.map((month) => (
+                        <option value="">{month}</option>
+                      ))}
                     </select>
                     <IoMdArrowDropdown className=" -m-[25px]" />
                   </div>
                   <div className=" flex items-center">
                     <select className=" appearance-none outline-none py-3 px-4 border-2 border-gray-300 rounded w-[90px]">
-                      <option value="">Year</option>
-                      <option value="">aaa</option>
-                      <option value="">aaa</option>
+                    {years?.map((year) => (
+                        <option value="">{year}</option>
+                      ))}
                     </select>
                     <IoMdArrowDropdown className=" -m-[25px]" />
                   </div>
@@ -135,7 +227,7 @@ const SignupModal = ({ setOpenSignUpModal }) => {
                   htmlFor=""
                   className=" text-[14px] font-[500] text-[#5c5c5c]"
                 >
-                  Email
+                  Email*
                 </label>
                 <input
                   type="text"
@@ -147,7 +239,7 @@ const SignupModal = ({ setOpenSignUpModal }) => {
                   htmlFor=""
                   className=" text-[14px] font-[500] text-[#5c5c5c]"
                 >
-                  Phone
+                  Phone*
                 </label>
                 <input
                   type="text"
@@ -159,13 +251,13 @@ const SignupModal = ({ setOpenSignUpModal }) => {
                   htmlFor=""
                   className=" text-[14px] font-[500] text-[#5c5c5c]"
                 >
-                  Country
+                  Country*
                 </label>
                 <div className=" flex items-center">
                   <select className=" appearance-none outline-none py-3 px-4 border-2 border-gray-300 rounded w-[300px]">
-                    <option value="">United State of America (USA) </option>
-                    <option value="">aaa</option>
-                    <option value="">aaa</option>
+                  {nations?.map((nation) => (
+                        <option value="">{nation}</option>
+                      ))}
                   </select>
                   <IoMdArrowDropdown className=" -m-[25px]" />
                 </div>
@@ -192,7 +284,7 @@ const SignupModal = ({ setOpenSignUpModal }) => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -28,7 +28,7 @@ const Header = () => {
           <img src={logo} className="h-[37px]"></img>
           <div className=" hidden lg:flex gap-10 text-white tracking-widest text-[13px] font-semibold">
             <NavLink to={"/"}>HOME</NavLink>
-            <CustomDropdown />
+            {/* <CustomDropdown /> */}
             <NavLink to={"/rooms"}>ROOMS</NavLink>
             <NavLink to={"/reservation"}>RESERVATION</NavLink>
             <NavLink to={"/blogs"}>BLOG</NavLink>
