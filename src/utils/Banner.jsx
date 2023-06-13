@@ -4,7 +4,6 @@ import { HiOutlineMail } from "react-icons/hi";
 import logo from "../assets/logo.png";
 import { Link, NavLink } from "react-router-dom";
 import Button from "./Button";
-import CustomDropdown from "./CustomDropdown";
 import { IoMenuSharp } from "react-icons/io5";
 import DatePickerHome from "./homeBanner/DatePickerHome";
 import { useEffect, useState } from "react";
@@ -115,11 +114,11 @@ const Banner = () => {
               </NavLink>
               <div className="">
                 <NavLink
-                  className=" pb-1"
+                  className=" pb-6"
                   to={`/`}
                   onMouseEnter={(e) => {
-                    setOffsetLeft(e.target.offsetLeft);
                     setIsDropdownOpen(true);
+                    setOffsetLeft(e.target.offsetLeft);
                   }}
                   onMouseLeave={() => setIsDropdownOpen(false)}
                 >
@@ -136,7 +135,7 @@ const Banner = () => {
                     }, 500);
                   }}
                   className={`${
-                    isDropdownOpen ? "opacity-100" : "opacity-0"
+                    isDropdownOpen ? "block" : "hidden"
                   } cursor-default absolute top-10 transition duration-500 bg-white w-52 shadow py-5 px-4 flex flex-col space-y-5 z-[100]`}
                 >
                   <NavLink
@@ -203,7 +202,7 @@ const Banner = () => {
         <div className=" custom-gradient_top h-[344px] top-0 absolute w-full  rounded-[20px]"></div>
         <div className=" custom-gradient_bottom h-[338px] absolute bottom-0  w-full rounded-[20px]"></div>
 
-        <div className="absolute h-[115vh] md:h-[671px] w-full bottom-0">
+        <div className="absolute h-[115vh] md:h-[631px] w-full bottom-0">
           <div className=" flex flex-col mt-2 md:mt-10 items-center ">
             <div className="">
               <h3 className=" font-allison text-[80px] md:text-[126px] text-center leading-[100px] pb-[30px] text-[#FFF] -rotate-[4deg]">

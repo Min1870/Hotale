@@ -15,12 +15,24 @@ import {
   FaTwitter,
 } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+import LoginModal from "../components/LoginModal";
+import SignupModal from "../components/SignupModal";
 const BlogDetails = () => {
   const [offsetLeft, setOffsetLeft] = useState(0);
   const [showDropdown, setShowDropdown] = useState(false);
 
+  const [openLoginModal, setOpenLoginModal] = useState(false);
+  const [openSignUpModal, setOpenSignUpModal] = useState(false);
+
   return (
+    <>
+    <AnimatePresence>
+        {openLoginModal && <LoginModal setOpenLoginModal={setOpenLoginModal} />}
+        {openSignUpModal && (
+          <SignupModal setOpenSignUpModal={setOpenSignUpModal} />
+        )}
+      </AnimatePresence>
     <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} transition={{duration:0.5}} >
       <div className="bg-bannerBg overflow-hidden bg-cover max-h-[65vh] md:min-h-[600px] bg-no-repeat relative">
         <div className=" text-white">
@@ -60,10 +72,10 @@ const BlogDetails = () => {
                   className="w-[147px] h-[37px] mb-3 cursor-pointer"
                 />
               </Link>
-              <div className=" relative">
+              <div onMouseLeave={() => setOffsetLeft(0)} className=" relative">
                 <div className=" flex items-center gap-10 text-[13px] font-[600] tracking-[2px]">
                   <NavLink
-                    className=" "
+                    className=" pb-1"
                     to={`/`}
                     onMouseEnter={(e) => setOffsetLeft(e.target.offsetLeft)}
                   >
@@ -71,10 +83,19 @@ const BlogDetails = () => {
                   </NavLink>
                   <div className="">
                     <NavLink
-                      className=" "
+                      className=" pb-6"
                       to={`/`}
                       onMouseEnter={(e) => {
                         setOffsetLeft(e.target.offsetLeft);
+                        setShowDropdown(true);
+                      }}
+                      onMouseLeave={() => setShowDropdown(false)}
+                    >
+                      PAGES
+                    </NavLink>
+                    {/* dropdown  */}
+                    <div
+                      onMouseEnter={() => {
                         setShowDropdown(true);
                       }}
                       onMouseLeave={() => {
@@ -82,13 +103,8 @@ const BlogDetails = () => {
                           setShowDropdown(false);
                         }, 500);
                       }}
-                    >
-                      PAGES
-                    </NavLink>
-                    {/* dropdown  */}
-                    <div
                       className={`${
-                        showDropdown ? "opacity-100" : "opacity-0"
+                        showDropdown ? "block" : "hidden"
                       } cursor-default absolute top-14 transition duration-500 bg-white w-52 shadow py-5 px-4 flex flex-col space-y-5 z-[100]`}
                     >
                       <NavLink
@@ -140,22 +156,25 @@ const BlogDetails = () => {
                   >
                     CONTACT
                   </NavLink>
+                  <div className="flex items-center gap-8 text-white  pb-1">
+                    <div className=" flex items-center gap-2">
+                      <div className="">USD</div>
+                      <IoMdArrowDropdown />
+                    </div>
+                    <div className=" cursor-pointer text-[13px] font-[600] tracking-[2px]">
+                      <Button text="BOOK NOW" />
+                    </div>
+                  </div>
                 </div>
                 <div
                   style={{ transform: `translateX(${offsetLeft}px)` }}
-                  className=" transition duration-300 w-[30px] h-[2px] bg-white"
+                  className=" -mt-[10px] transition duration-300 w-[30px] h-[2px] bg-white"
                 ></div>
               </div>
-              <div className="flex items-center gap-8 text-white  pb-1">
-                <div className=" flex items-center gap-2">
-                  <div className="">USD</div>
-                  <IoMdArrowDropdown />
-                </div>
-                <div className=" cursor-pointer text-[13px] font-[600] tracking-[2px]">
-                  <Button text="BOOK NOW" />
-                </div>
-              </div>
             </div>
+
+
+
           </div>
         </div>
         <div className="mt-20 px-5 text-center text-white h-[300px] lg:mb-10 flex flex-col items-center justify-center space-y-5 md:max-w-[80%] mx-auto">
@@ -540,6 +559,7 @@ const BlogDetails = () => {
         </div>
       </div>
     </motion.div>
+    </>
   );
 };
 

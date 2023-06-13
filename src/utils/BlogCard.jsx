@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const BlogCard = ({ blog }) => {
   return (
     <div className="max-w-sm bg-white border border-gray-100 shadow ">
-      <Link to={""} className="relative">
+      <Link to={`/blogDetails/${blog.id}`} className="relative">
         <div className=" inline-block border-2 overflow-hidden relative group">
           <img
             className="group-hover:scale-110 transition-all duration-300"
