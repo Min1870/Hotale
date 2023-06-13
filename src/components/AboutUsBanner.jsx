@@ -67,7 +67,7 @@ const AboutUsBanner = ({
                   </NavLink>
                   <div className="">
                     <NavLink
-                      className=" pb-1"
+                      className=" pb-6"
                       to={`/`}
                       onMouseEnter={(e) => {
                         setOffsetLeft(e.target.offsetLeft);
@@ -88,7 +88,7 @@ const AboutUsBanner = ({
                         }, 500);
                       }}
                       className={`${
-                        showDropdown ? "opacity-100" : "opacity-0"
+                        showDropdown ? "block" : "hidden"
                       } cursor-default absolute top-14 transition duration-500 bg-white w-52 shadow py-5 px-4 flex flex-col space-y-5 z-[100]`}
                     >
                       <NavLink
@@ -156,6 +156,9 @@ const AboutUsBanner = ({
                 ></div>
               </div>
             </div>
+
+
+            
           </div>
           {/* <div className=" text-center text-white mt-20 space-y-5 md:max-w-[60%] mx-auto">
             <h1 className=" text-[40px] md:text-[98px] font-[400]">Our Team</h1>
