@@ -6,7 +6,7 @@ import { SlArrowRight } from "react-icons/sl";
 const RoomCard = ({ room }) => {
   return (
     <div className="max-w-sm bg-white border border-gray-100 rounded-[20px] shadow ">
-      <Link to={""} className="relative">
+      <Link to={`/roomsDetails/${room.id}`} className="relative">
         <img className="rounded-t-[20px]" src={room?.img} alt="" />
         <div className=" absolute  px-[20px] py-[21px] text-[20px] rounded-[10px] bg-black bottom-[10px] left-[25px] font-semibold">
           <span className=" text-white mr-[5px] ">From</span>
