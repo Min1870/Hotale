@@ -14,6 +14,12 @@ import LoginModal from "../components/LoginModal";
 import SignupModal from "../components/SignupModal";
 import { useParams } from "react-router-dom";
 import { teamMembers } from "../utils/teamMember";
+import { AnimatePresence, motion } from "framer-motion";
+
+const variants = {
+  hidden: { opacity: 0, y: 75 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.3 } },
+};
 
 const OurTeamDetail = () => {
   const [openLoginModal, setOpenLoginModal] = useState(false);
@@ -27,11 +33,19 @@ const OurTeamDetail = () => {
 
   return (
     <>
-      {openLoginModal && <LoginModal setOpenLoginModal={setOpenLoginModal} />}
-      {openSignUpModal && (
-        <SignupModal setOpenSignUpModal={setOpenSignUpModal} />
-      )}
-      <div className="">
+      <AnimatePresence>
+        {openLoginModal && <LoginModal setOpenLoginModal={setOpenLoginModal} />}
+        {openSignUpModal && (
+          <SignupModal setOpenSignUpModal={setOpenSignUpModal} />
+        )}
+      </AnimatePresence>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.5 }}
+        className=" pb-20 overflow-hidden"
+      >
         <AboutUsBanner
           openLoginModal={openLoginModal}
           setOpenLoginModal={setOpenLoginModal}
@@ -57,7 +71,13 @@ const OurTeamDetail = () => {
         </AboutUsBanner>
         <div className=" md:mx-10 mt-20 gap-20 grid md:grid-cols-3 lg:grid-cols-4">
           {/* left  */}
-          <div className=" space-y-10 md:col-span-1 lg:col-span-1 mx-auto">
+          <motion.div
+            viewport={{ once: true }}
+            initial="hidden"
+            whileInView="visible"
+            variants={variants}
+            className=" space-y-10 md:col-span-1 lg:col-span-1 mx-auto"
+          >
             <div>
               <h1 className=" text-[#191919] font-[500] text-[29px] mb-5">
                 Contact Info
@@ -102,15 +122,26 @@ const OurTeamDetail = () => {
               <HiOutlineNewspaper className=" text-lg" />
               Download cv
             </button>
-          </div>
+          </motion.div>
           {/* right  */}
           <div className=" md:col-span-2 lg:col-span-3 space-y-10">
             <div className="">
-              <h1 className=" text-[#191919] font-[500] text-[29px] mb-5">
+              <motion.h1
+                viewport={{ once: true, amount: 0.5 }}
+                initial="hidden"
+                whileInView="visible"
+                variants={variants}
+                className=" text-[#191919] font-[500] text-[29px] mb-5"
+              >
                 Biography
-              </h1>
+              </motion.h1>
               <div className=" space-y-5 font-[400] text-[20px] leading-[34px] text-[#262626]">
-                <p>
+                <motion.p
+                  viewport={{ once: true, amount: 0.5 }}
+                  initial="hidden"
+                  whileInView="visible"
+                  variants={variants}
+                >
                   <span className=" font-[600]">
                     Far far away, behind the word mountains,
                   </span>
@@ -120,8 +151,13 @@ const OurTeamDetail = () => {
                   river named Duden flows by their place and supplies it with
                   the necessary regelialia. It is a paradisematic country, in
                   which roasted.
-                </p>
-                <p>
+                </motion.p>
+                <motion.p
+                  viewport={{ once: true, amount: 0.5 }}
+                  initial="hidden"
+                  whileInView="visible"
+                  variants={variants}
+                >
                   The Big&nbsp;
                   <span className=" underline">
                     Oxmox advised her not to do so,
@@ -130,18 +166,28 @@ const OurTeamDetail = () => {
                   Marks and devious Semikoli, but the Little Blind Text didn’t
                   listen. She packed her seven versalia, put her initial into
                   the belt and made herself on the way.
-                </p>
-                <p>
+                </motion.p>
+                <motion.p
+                  viewport={{ once: true, amount: 0.5 }}
+                  initial="hidden"
+                  whileInView="visible"
+                  variants={variants}
+                >
                   A small river named Duden flows by their place and supplies it
                   with the necessary regelialia. It is a paradisematic country,
                   in which roasted parts of sentences fly into your mouth. Even
                   the all-powerful Pointing has no control about the blind texts
                   it is an almost unorthographic life One day however a small
                   line of blind text by the nam
-                </p>
+                </motion.p>
               </div>
             </div>
-            <div>
+            <motion.div
+              viewport={{ once: true, amount: 0.5 }}
+              initial="hidden"
+              whileInView="visible"
+              variants={variants}
+            >
               <h1 className=" text-[#191919] font-[500] text-[29px] mb-5">
                 Education
               </h1>
@@ -159,10 +205,10 @@ const OurTeamDetail = () => {
                   Architecture MEng (Hons), Leeds School of Architecture 2009
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };
