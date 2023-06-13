@@ -5,7 +5,7 @@ import { Link, NavLink } from "react-router-dom";
 import Button from "../utils/Button";
 import { IoMdArrowDropdown } from "react-icons/io";
 import CustomDropdown from "../utils/CustomDropdown";
-import { useRef, useState } from "react";
+import { useState } from "react";
 
 const AboutUsBanner = ({
   openLoginModal,
@@ -15,27 +15,10 @@ const AboutUsBanner = ({
   children,
 }) => {
   const [offsetLeft, setOffsetLeft] = useState(0);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const closeTimeoutRef = useRef(null);
-
-  const handleDropdownToggle = () => {
-    setIsDropdownOpen(!isDropdownOpen);
-  };
-
-  const handleDropdownClose = () => {
-    closeTimeoutRef.current = setTimeout(() => {
-      setIsDropdownOpen(false);
-    }, 200);
-  };
-
-  const handleDropdownCancelClose = () => {
-    if (closeTimeoutRef.current) {
-      clearTimeout(closeTimeoutRef.current);
-    }
-  };
+  const [showDropdown, setShowDropdown] = useState(false);
   return (
     <>
-      <div className=" mt-5 lg:mt-0 bg-bannerBg overflow-hidden bg-cover rounded-[20px] max-h-[65vh] md:max-h-[100vh] bg-no-repeat relative">
+      <div className=" bg-bannerBg overflow-hidden bg-cover rounded-[20px] max-h-[65vh] md:max-h-[100vh] bg-no-repeat relative">
         <div className=" text-white">
           <div className=" pt-8 px-10 space-y-10 hidden lg:block">
             <div className=" flex items-center justify-between">
@@ -73,7 +56,7 @@ const AboutUsBanner = ({
                   className="w-[147px] h-[37px] mb-3 cursor-pointer"
                 />
               </Link>
-              <div className=" relative">
+              <div onMouseLeave={() => setOffsetLeft(0)} className=" relative">
                 <div className=" flex items-center gap-10 text-[13px] font-[600] tracking-[2px]">
                   <NavLink
                     className=" pb-1"
@@ -82,53 +65,53 @@ const AboutUsBanner = ({
                   >
                     HOME
                   </NavLink>
-
-                  <div>
+                  <div className="">
                     <NavLink
+                      className=" pb-1"
                       to={`/`}
-                      className="pb-1"
                       onMouseEnter={(e) => {
                         setOffsetLeft(e.target.offsetLeft);
-                        handleDropdownToggle();
+                        setShowDropdown(true);
                       }}
-                      onMouseLeave={handleDropdownClose}
+                      onMouseLeave={() => setShowDropdown(false)}
                     >
                       PAGES
                     </NavLink>
+                    {/* dropdown  */}
                     <div
-                      onMouseEnter={handleDropdownCancelClose}
-                      onMouseLeave={handleDropdownClose}
+                      onMouseEnter={() => {
+                        setShowDropdown(true);
+                      }}
+                      onMouseLeave={() => {
+                        setTimeout(() => {
+                          setShowDropdown(false);
+                        }, 500);
+                      }}
                       className={`${
-                        isDropdownOpen ? "opacity-100" : "opacity-0"
+                        showDropdown ? "opacity-100" : "opacity-0"
                       } cursor-default absolute top-14 transition duration-500 bg-white w-52 shadow py-5 px-4 flex flex-col space-y-5 z-[100]`}
                     >
                       <NavLink
                         to={"/about-us"}
-                        className={`${
-                          !isDropdownOpen && "cursor-default"
-                        } text-[#757575] font-normal text-[16px] transition-all hover:text-black`}
+                        className="text-[#757575] font-normal text-[16px] transition-all hover:text-black"
                       >
                         About Us
                       </NavLink>
                       <NavLink
                         to={"/our-team"}
-                        className={`${
-                          !isDropdownOpen && "cursor-default"
-                        } text-[#757575] font-normal text-[16px] transition-all hover:text-black`}
+                        className="text-[#757575] font-normal text-[16px] transition-all hover:text-black"
                       >
                         Our Team
                       </NavLink>
                       <NavLink
                         to={"/hotel-review"}
-                        className={`${
-                          !isDropdownOpen && "cursor-default"
-                        } text-[#757575] font-normal text-[16px] transition-all hover:text-black`}
+                        className="text-[#757575] font-normal text-[16px] transition-all hover:text-black"
                       >
                         Hotel Reviews
                       </NavLink>
                     </div>
                   </div>
-
+                  {/* <CustomDropdown setOffsetLeft={setOffsetLeft}/> */}
                   <NavLink
                     className=" pb-1"
                     onMouseEnter={(e) => setOffsetLeft(e.target.offsetLeft)}
@@ -146,7 +129,7 @@ const AboutUsBanner = ({
                   <NavLink
                     className=" pb-1"
                     onMouseEnter={(e) => setOffsetLeft(e.target.offsetLeft)}
-                    to={`/blogs`}
+                    to={`/blog`}
                   >
                     BLOG
                   </NavLink>
