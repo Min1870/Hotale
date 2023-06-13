@@ -56,7 +56,7 @@ const AboutUsBanner = ({
                   className="w-[147px] h-[37px] mb-3 cursor-pointer"
                 />
               </Link>
-              <div className=" relative">
+              <div onMouseLeave={() => setOffsetLeft(0)} className=" relative">
                 <div className=" flex items-center gap-10 text-[13px] font-[600] tracking-[2px]">
                   <NavLink
                     className=" pb-1"
@@ -73,16 +73,20 @@ const AboutUsBanner = ({
                         setOffsetLeft(e.target.offsetLeft);
                         setShowDropdown(true);
                       }}
-                      onMouseLeave={() => {
-                        setTimeout(() => {
-                          setShowDropdown(false);
-                        }, 500);
-                      }}
+                      onMouseLeave={() => setShowDropdown(false)}
                     >
                       PAGES
                     </NavLink>
                     {/* dropdown  */}
                     <div
+                      onMouseEnter={() => {
+                        setShowDropdown(true);
+                      }}
+                      onMouseLeave={() => {
+                        setTimeout(() => {
+                          setShowDropdown(false);
+                        }, 500);
+                      }}
                       className={`${
                         showDropdown ? "opacity-100" : "opacity-0"
                       } cursor-default absolute top-14 transition duration-500 bg-white w-52 shadow py-5 px-4 flex flex-col space-y-5 z-[100]`}
