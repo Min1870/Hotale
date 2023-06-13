@@ -4,6 +4,13 @@ import { HiOutlineChevronRight, HiOutlineClock } from "react-icons/hi";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css/core";
 import "./customSplide.css";
+import { motion } from "framer-motion";
+
+const bottomVariants = {
+  hidden : {opacity: 0, y: 100},
+  visible : {opacity: 1, y: 0, transition: {duration: 0.5}},
+}
+
 const NewsOffers = () => {
   const news = [
     {
@@ -64,7 +71,7 @@ const NewsOffers = () => {
       <div className="flex justify-center items-center flex-col gap-10 relative">
         <div className="h-[600px] bg-[#F8F8F8] w-[500px] rounded-3xl absolute left-28 top-28 -z-50 hidden lg:block"></div>
 
-        <div className="w-[85%] mx-auto">
+        <motion.div viewport={{once: true, amount: 0.5}} initial="hidden" whileInView="visible" variants={bottomVariants} className="w-[85%] mx-auto">
           <Splide
             options={{
               perPage: 3,
@@ -95,7 +102,7 @@ const NewsOffers = () => {
                       alt=""
                       className="h-[100%] w-full transition-all duration-500 hover:scale-105 group-hover:opacity-50"
                     />
-                    <div className="absolute bottom-10 font-semibold text-white text-center w-full opacity-0 transition-all duration-500 group-hover:opacity-100">
+                    <div className="absolute bottom-10 px-5 font-semibold text-white text-center w-full opacity-0 transition-all duration-500 group-hover:opacity-100">
                       <h1 className="text-2xl mb-3">{n.title}</h1>
                       <p className=" text-sm flex gap-2 items-center justify-center">
                         <HiOutlineClock className="text-lg" /> {n.date}
@@ -106,7 +113,7 @@ const NewsOffers = () => {
               );
             })}
           </Splide>
-        </div>
+        </motion.div>
         <p className="flex gap-2 items-center  border-b  border-[#dadada] pb-2 uppercase text-sm font-semibold transition-all duration-500 cursor-pointer hover:border-black">
           Read the blogs <HiOutlineChevronRight className="text-xl" />
         </p>
