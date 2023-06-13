@@ -24,7 +24,7 @@ const Header = () => {
           showNav ? "translate-y-0" : "-translate-y-full"
         }`}
       >
-        <div className="flex justify-between items-center w-[85%] mx-auto py-5">
+        <div className="flex justify-between items-center w-[90%] mx-auto py-5">
           <img src={logo} className="h-[37px]"></img>
           <div className=" hidden lg:flex gap-10 text-white tracking-widest text-[13px] font-semibold">
             <NavLink to={"/"}>HOME</NavLink>

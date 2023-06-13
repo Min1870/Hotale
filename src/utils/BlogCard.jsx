@@ -31,7 +31,7 @@ const BlogCard = ({ blog }) => {
           </p>
         </div>
         <Link
-          to={""}
+          to={`/blogDetails/${blog.id}`}
           className=" hover-underline-animation_blog gap-3 mb-[50px] text-[17px]  items-center py-2 font-normal transition duration-200 hover:text-[#656565] text-[#212121] focus:ring-4 focus:outline-none"
         >
           Read More
