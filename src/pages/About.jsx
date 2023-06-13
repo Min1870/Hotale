@@ -3,17 +3,35 @@ import BtnAbout from "../components/BtnAbout";
 import AboutUsBanner from "../components/AboutUsBanner";
 import LoginModal from "../components/LoginModal";
 import SignupModal from "../components/SignupModal";
+import { AnimatePresence, motion} from "framer-motion";
+
+const variants = {
+  hidden : {opacity: 0, y:75},
+  visible : {opacity: 1, y: 0, transition: {duration: 0.5}},
+}
+
+const leftVariants = {
+  hidden : {opacity: 0, x:-75},
+  visible : {opacity: 1, x:0, transition: {duration: 0.5}},
+}
+const rightVariants = {
+  hidden : {opacity: 0, x: 75},
+  visible : {opacity: 1, x: 0, transition: {duration: 0.5}},
+}
 
 const About = () => {
   const [openLoginModal, setOpenLoginModal] = useState(false);
   const [openSignUpModal, setOpenSignUpModal] = useState(false);
+
   return (
     <>
-      {openLoginModal && <LoginModal setOpenLoginModal={setOpenLoginModal} />}
+     <AnimatePresence>
+     {openLoginModal && <LoginModal setOpenLoginModal={setOpenLoginModal} />}
       {openSignUpModal && (
         <SignupModal setOpenSignUpModal={setOpenSignUpModal} />
       )}
-      <div className="">
+     </AnimatePresence>
+      <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} transition={{duration:0.5}} className="">
         <AboutUsBanner
           openLoginModal={openLoginModal}
           setOpenLoginModal={setOpenLoginModal}
@@ -24,7 +42,7 @@ const About = () => {
             <h1 className=" text-[40px] md:text-[70px] font-[400]">About Us</h1>
           </div>
         </AboutUsBanner>
-        <div className=" py-[50px] md:py-[75px] mx-auto space-y-5 text-center w-[80%] md:w-[55%]">
+        <motion.div viewport={{once: true, amount: 0.3}} initial="hidden" whileInView="visible" variants={variants} className=" py-[50px] md:py-[75px] mx-auto space-y-5 text-center w-[80%] md:w-[55%]">
           <h1 className=" font-allison text-[55px] lg:text-[80px] leading-[66px]">
             Visit Our Famous Facilities
           </h1>
@@ -35,9 +53,9 @@ const About = () => {
             </p>
             <div className=" w-[40px] bg-[#0a0a0a] h-[3px] "></div>
           </div>
-        </div>
+        </motion.div>
         {/* section 2  */}
-        <div className=" md:mx-10 md:space-y-10">
+        <div className=" md:mx-10 md:space-y-10 overflow-hidden">
           {/* photo one  */}
           <div className=" py-[50px] grid md:grid-cols-2 gap-10 md:gap-20">
             <div className=" overflow-hidden">
@@ -47,7 +65,7 @@ const About = () => {
                 alt=""
               />
             </div>
-            <div className=" space-y-10 w-[90%]">
+            <motion.div viewport={{once: true, amount: 0.5}} initial="hidden" whileInView="visible" variants={rightVariants} className=" space-y-10 w-[90%]">
               <h1 className=" text-[30px] font-[500] tracking-[1px]">
                 3 Michelin Stars Restaurant, Vézère
               </h1>
@@ -57,11 +75,11 @@ const About = () => {
                 ingredients of the season.
               </p>
               <BtnAbout />
-            </div>
+            </motion.div>
           </div>
           {/* photo two  */}
           <div className=" py-[50px] md:grid md:grid-cols-2 flex flex-col-reverse gap-10 md:gap-20">
-            <div className=" space-y-10 w-[90%]">
+            <motion.div viewport={{once: true, amount: 0.5}} initial="hidden" whileInView="visible" variants={leftVariants} className=" space-y-10 w-[90%]">
               <h1 className=" text-[30px] font-[500] tracking-[1px]">
                 The Penthouse Bar, An iconic american bar
               </h1>
@@ -72,7 +90,7 @@ const About = () => {
                 trends.
               </p>
               <BtnAbout />
-            </div>
+            </motion.div>
             <div className=" overflow-hidden">
               <img
                 className=" w-full object-cover rounded-[20px] "
@@ -90,7 +108,7 @@ const About = () => {
                 alt=""
               />
             </div>
-            <div className=" space-y-10 w-[90%]">
+            <motion.div viewport={{once: true, amount: 0.5}} initial="hidden" whileInView="visible" variants={rightVariants} className=" space-y-10 w-[90%]">
               <h1 className=" text-[30px] font-[500] tracking-[1px]">
                 The Spa. Refresh Yourself
               </h1>
@@ -100,22 +118,22 @@ const About = () => {
                 always find a place for yourself at our spa.
               </p>
               <BtnAbout />
-            </div>
+            </motion.div>
           </div>
         </div>
 
         {/* section three  */}
-        <div className=" py-[80px] md:mx-10 md:space-y-10">
-          <div className=" py-[50px] grid md:grid-cols-2 gap-10 md:gap-20">
+        <div className="  py-[80px] md:mx-10 md:space-y-10">
+          <div className=" grid md:grid-cols-2 gap-10 md:gap-20">
             <div className=" flex gap-10 md:gap-20 text-[55px] font-[500]">
               <h1>
-                5{" "}
+                5
                 <span className=" text-[22px] font-[400] tracking-[7px]">
                   stars
                 </span>
               </h1>
               <h1>
-                25{" "}
+                25
                 <span className=" text-[22px] font-[400] tracking-[7px]">
                   rooms
                 </span>
@@ -190,7 +208,7 @@ const About = () => {
             />
           </div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };

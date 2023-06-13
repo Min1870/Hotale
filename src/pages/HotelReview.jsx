@@ -9,6 +9,21 @@ import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
 import "./HotelReview.css";
 import Review from "../components/Review";
 import { topReviews } from "../utils/teamMember";
+import { AnimatePresence, motion } from "framer-motion";
+
+const variants = {
+  hidden: { opacity: 0, y: 75 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
+
+const leftVariants = {
+  hidden: { opacity: 0, x: -75 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
+};
+const rightVariants = {
+  hidden: { opacity: 0, x: 75 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
+};
 
 const HotelReview = () => {
   const [openLoginModal, setOpenLoginModal] = useState(false);
@@ -17,11 +32,19 @@ const HotelReview = () => {
 
   return (
     <>
-      {openLoginModal && <LoginModal setOpenLoginModal={setOpenLoginModal} />}
-      {openSignUpModal && (
-        <SignupModal setOpenSignUpModal={setOpenSignUpModal} />
-      )}
-      <div>
+      <AnimatePresence>
+        {openLoginModal && <LoginModal setOpenLoginModal={setOpenLoginModal} />}
+        {openSignUpModal && (
+          <SignupModal setOpenSignUpModal={setOpenSignUpModal} />
+        )}
+      </AnimatePresence>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.5 }}
+        className="overflow-hidden pb-20"
+      >
         <AboutUsBanner
           openLoginModal={openLoginModal}
           setOpenLoginModal={setOpenLoginModal}
@@ -37,13 +60,25 @@ const HotelReview = () => {
             </p>
           </div>
         </AboutUsBanner>
-        <div className=" py-[50px] md:py-[75px] flex flex-col items-center gap-5">
-          <h1 className=" text-[28px] font-[400] ">
+        <motion.div
+          viewport={{ once: true, amount: 0.5 }}
+          initial="hidden"
+          whileInView="visible"
+          variants={variants}
+          className=" py-[50px] md:py-[75px] flex flex-col items-center gap-5"
+        >
+          <h1 className=" text-center text-[28px] font-[400] ">
             What Our Clients are saying
           </h1>
           <div className=" bg-[#0a0a0a] w-[100px] h-[3px] mb-4 md:mb-8"></div>
-        </div>
-        <div className=" pb-[100px] mx-10">
+        </motion.div>
+        <motion.div
+          viewport={{ once: true, amount: 0.5 }}
+          initial="hidden"
+          whileInView="visible"
+          variants={variants}
+          className=" pb-[100px] mx-10"
+        >
           {/* Slider  */}
           <Splide
             hasTrack={false}
@@ -66,7 +101,6 @@ const HotelReview = () => {
                 },
                 540: {
                   perPage: 1,
-                  type: "fade",
                 },
               },
             }}
@@ -79,8 +113,14 @@ const HotelReview = () => {
               ))}
             </SplideTrack>
           </Splide>
-        </div>
-        <div className=" py-[50px] md:grid md:grid-cols-2 flex flex-col md:min-h-[100vh]">
+        </motion.div>
+        <motion.div
+          viewport={{ once: true, amount: 0.5 }}
+          initial="hidden"
+          whileInView="visible"
+          variants={variants}
+          className=" py-[50px] md:grid md:grid-cols-2 flex flex-col md:min-h-[100vh]"
+        >
           <div className=" h-full">
             <img
               className=" h-full object-cover"
@@ -108,10 +148,16 @@ const HotelReview = () => {
               </SplideSlide>
             ))}
           </Splide>
-        </div>
+        </motion.div>
 
-        <div className=" py-[50px] grid md:grid-cols-2 px-10 gap-20 md:gap-10">
-          <div className=" space-y-8 w-[90%] md:mt-20">
+        <div className=" py-[50px] grid md:grid-cols-2 px-10 gap-20 md:gap-10 overflow-hidden">
+          <motion.div
+            viewport={{ once: true, amount: 0.5 }}
+            initial="hidden"
+            whileInView="visible"
+            variants={leftVariants}
+            className=" space-y-8 w-[90%] md:mt-20"
+          >
             <h1 className=" text-[24px] font-[500] leading-[28px]">
               3 Michelin Stars Restaurant, Vézère
             </h1>
@@ -124,8 +170,14 @@ const HotelReview = () => {
             <button className=" font-[500] text-[15] uppercase bg-[#181818] hover:bg-gray-500 transition duration-500 rounded text-white py-[13px] px-[29px]">
               learn more
             </button>
-          </div>
-          <div className=" overflow-hidden relative">
+          </motion.div>
+          <motion.div
+            viewport={{ once: true, amount: 0.5 }}
+            initial="hidden"
+            whileInView="visible"
+            variants={rightVariants}
+            className=" overflow-hidden relative"
+          >
             <a href="https://www.youtube.com/watch?time_continue=2&v=US7bGTUkBfg&feature=emb_title">
               <img
                 className=" w-full object-cover  rounded-[20px] "
@@ -140,9 +192,9 @@ const HotelReview = () => {
                 />
               </span>
             </a>
-          </div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };
