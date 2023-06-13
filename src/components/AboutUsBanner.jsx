@@ -18,9 +18,9 @@ const AboutUsBanner = ({
   const [showDropdown, setShowDropdown] = useState(false);
   return (
     <>
-      <div className=" bg-bannerBg overflow-hidden bg-cover rounded-[20px] max-h-[65vh] md:max-h-[100vh] bg-no-repeat relative">
-        <div className=" text-white">
-          <div className=" pt-8 px-10 space-y-10 hidden lg:block">
+      <div className="  pt-8 px-10 bg-bannerBg overflow-hidden bg-cover rounded-[20px] max-h-[65vh] md:max-h-[100vh] bg-no-repeat relative">
+        <div className=" text-white  max-w-[1200px] mx-auto">
+          <div className=" space-y-8 hidden lg:block">
             <div className=" flex items-center justify-between">
               <div className="flex items-center gap-10 text-[15px] font-[400] tracking-[1px]">
                 <div className="flex items-center gap-2">
