@@ -101,7 +101,7 @@ const SignupModal = ({ setOpenSignUpModal }) => {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
       onClick={closeSignUpModal}
-      className="backdrop select-none bg-[#00000060] flex justify-center items-center h-screen fixed top-0 left-0 right-0 z-50 w-full"
+      className="backdrop z-[1000] select-none bg-[#00000060] flex justify-center items-center h-screen fixed top-0 left-0 right-0 z-50 w-full"
     >
       <div className="relative w-[90%] lg:w-[70%] max-h-[90%] overflow-y-scroll overflow-x-hidden">
         <div className=" bg-white shadow px-3 md:px-8">

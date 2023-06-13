@@ -15,12 +15,13 @@ import {
   FaTwitter,
 } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
+import { motion } from "framer-motion";
 const BlogDetails = () => {
   const [offsetLeft, setOffsetLeft] = useState(0);
   const [showDropdown, setShowDropdown] = useState(false);
 
   return (
-    <div>
+    <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} transition={{duration:0.5}} >
       <div className="bg-bannerBg overflow-hidden bg-cover max-h-[65vh] md:min-h-[600px] bg-no-repeat relative">
         <div className=" text-white">
           <div className=" pt-8 px-10 space-y-10 hidden lg:block">
@@ -538,7 +539,7 @@ const BlogDetails = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

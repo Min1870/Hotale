@@ -18,7 +18,7 @@ const Contact = () => {
   return (
     <>
 
-      <div className=" overflow-hidden">
+      <m.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} transition={{duration:0.5}}  className=" overflow-hidden">
     {/* banner */}
     <div
         className="w-full md:h-screen h-[300px] object-cover mt-5 md:mt-0 "
@@ -134,7 +134,7 @@ const Contact = () => {
           <FaTwitter className="mr-[40px] cursor-pointer"/>
         </a>
       </div>
-      </div>
+      </m.div>
   
 
       <footer />

@@ -129,7 +129,7 @@ const AboutUsBanner = ({
                   <NavLink
                     className=" pb-1"
                     onMouseEnter={(e) => setOffsetLeft(e.target.offsetLeft)}
-                    to={`/blog`}
+                    to={`/blogs`}
                   >
                     BLOG
                   </NavLink>

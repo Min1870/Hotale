@@ -12,6 +12,7 @@ import RoomModalHome from "./homeBanner/RoomModalHome";
 import GuestModalHome from "./homeBanner/GuestModalHome";
 import LoginModal from "../components/LoginModal";
 import SignupModal from "../components/SignupModal";
+import { AnimatePresence } from "framer-motion";
 
 const Banner = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -34,10 +35,12 @@ const Banner = () => {
 
   return (
     <>
-      {openLoginModal && <LoginModal setOpenLoginModal={setOpenLoginModal} />}
-      {openSignUpModal && (
-        <SignupModal setOpenSignUpModal={setOpenSignUpModal} />
-      )}
+      <AnimatePresence>
+        {openLoginModal && <LoginModal setOpenLoginModal={setOpenLoginModal} />}
+        {openSignUpModal && (
+          <SignupModal setOpenSignUpModal={setOpenSignUpModal} />
+        )}
+      </AnimatePresence>
       {/* Mobile Navbar */}
       <div className="lg:hidden flex min-w-full items-center justify-between py-5 px-[40px] xl:px-[120px] text-white bg-black z-50 absolute top-0 left-0">
         <Link to="/">

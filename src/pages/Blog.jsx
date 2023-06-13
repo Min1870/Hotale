@@ -1,10 +1,11 @@
 import BannerForAll from "../utils/BannerForAll";
 import BlogCard from "../utils/BlogCard";
 import { blogs } from "../utils/blogs";
+import { motion } from "framer-motion";
 
 const Blog = () => {
   return (
-    <div>
+    <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} transition={{duration:0.5}} >
       <BannerForAll
         text={"Blogs"}
         desc={"Cities To Visit For Your First Time In Europe"}
@@ -14,7 +15,7 @@ const Blog = () => {
           <BlogCard key={blog.id} blog={blog}/>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

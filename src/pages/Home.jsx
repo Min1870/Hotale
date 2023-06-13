@@ -5,17 +5,18 @@ import Facilites from "../components/Home/Facilites";
 import Testimonial from "../components/Home/Testimonial";
 import NewsOffers from "../components/Home/NewsOffers";
 import NewsLetter from "../components/Home/NewsLetter";
+import { motion } from "framer-motion";
 
 const Home = () => {
   return (
-    <div>
+    <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} transition={{duration:0.5}} >
       <Hero />
       <OurRooms />
       <Facilites />
       <Testimonial />
       <NewsOffers />
       <NewsLetter />
-    </div>
+    </motion.div>
   );
 };
 

@@ -15,7 +15,7 @@ const LoginModal = ({ setOpenLoginModal }) => {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
       onClick={closeLoginModal}
-      className="backdrop select-none bg-[#00000060] flex justify-center items-center h-screen fixed top-0 left-0 right-0 z-50 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0  max-h-full"
+      className="backdrop select-none z-[1000] bg-[#00000060] flex justify-center items-center h-screen fixed top-0 left-0 right-0 z-50 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0  max-h-full"
     >
       <div className="w-[80%] lg:w-[65%]">
         <div className="relative bg-white shadow px-8">

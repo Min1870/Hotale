@@ -4,15 +4,21 @@ import LoginModal from '../components/LoginModal'
 import SignupModal from '../components/SignupModal'
 import AboutUsBanner from '../components/AboutUsBanner'
 import { rooms } from "../utils/rooms";
+import { AnimatePresence, motion } from "framer-motion";
 
 const Rooms = () => {
   const [openLoginModal, setOpenLoginModal] = useState(false)
   const [openSignUpModal, setOpenSignUpModal] = useState(false)
   return (
     <>
+    <AnimatePresence>
     {openLoginModal && <LoginModal setOpenLoginModal={setOpenLoginModal}/>}
     {openSignUpModal && <SignupModal setOpenSignUpModal={setOpenSignUpModal}/>}
-    <div>
+    </AnimatePresence>
+    <motion.div initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }} >
       <AboutUsBanner
         openLoginModal={openLoginModal}
         setOpenLoginModal={setOpenLoginModal}
@@ -30,7 +36,7 @@ const Rooms = () => {
           <RoomCard key={room.id} room={room}/>
         ))}
       </div>
-    </div>
+    </motion.div>
     </>
   );
 };
