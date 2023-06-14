@@ -34,7 +34,7 @@ const OurTeamBanner = ({
   };
   return (
     <>
-      <div className=" bg-contactBgGradient overflow-hidden bg-cover rounded-[20px] min-h-[60vh] md:min-h-[100vh] bg-no-repeat relative">
+      <div className=" bg-contactBgGradient overflow-hidden bg-cover rounded-[20px] min-h-[60vh] md:min-h-[70vh] lg:min-h-[100vh] bg-no-repeat relative">
         <div className=" text-white">
           <div className=" py-8 px-10 space-y-10 hidden lg:block">
             <div className=" flex items-center justify-between">
@@ -98,7 +98,7 @@ const OurTeamBanner = ({
                       onMouseLeave={handleDropdownClose}
                       className={`${
                         isDropdownOpen ? "opacity-100" : "opacity-0"
-                      } cursor-default absolute top-14 transition duration-500 bg-white w-52 shadow py-5 px-4 flex flex-col space-y-5 z-[100]`}
+                      } cursor-default absolute top-8 transition duration-500 bg-white w-52 shadow py-5 px-4 flex flex-col space-y-5 z-[100]`}
                     >
                       <NavLink
                         to={"/about-us"}
@@ -154,21 +154,24 @@ const OurTeamBanner = ({
                   >
                     CONTACT
                   </NavLink>
-                  <div className="flex items-center gap-8 text-white">
+                  
+                </div>
+                <div
+                  style={{ transform: `translateX(${offsetLeft}px)` }}
+                  className=" transition duration-300 w-[30px] h-[2px] bg-white"
+                ></div>
+              </div>
+              <div className="flex items-center gap-8 text-white">
                     <div className=" flex items-center gap-2">
                       <div className="">USD</div>
                       <IoMdArrowDropdown />
                     </div>
+                    <Link to={`/reservation`}>
                     <div className=" cursor-pointer">
                       <Button text="BOOK NOW" />
                     </div>
+                    </Link>
                   </div>
-                </div>
-                <div
-                  style={{ transform: `translateX(${offsetLeft}px)` }}
-                  className=" -mt-[10px] transition duration-300 w-[30px] h-[2px] bg-white"
-                ></div>
-              </div>
             </div>
           </div>
           <div className=" px-5 lg:px-0 text-center text-white mt-20 space-y-5 md:max-w-[70%] mx-auto">

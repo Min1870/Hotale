@@ -89,7 +89,7 @@ const AboutUsBanner = ({
                       }}
                       className={`${
                         showDropdown ? "block" : "hidden"
-                      } cursor-default absolute top-14 transition duration-500 bg-white w-52 shadow py-5 px-4 flex flex-col space-y-5 z-[100]`}
+                      } cursor-default absolute top-8 transition duration-500 bg-white w-52 shadow py-5 px-4 flex flex-col space-y-5 z-[100]`}
                     >
                       <NavLink
                         to={"/about-us"}
@@ -140,21 +140,24 @@ const AboutUsBanner = ({
                   >
                     CONTACT
                   </NavLink>
-                  <div className="flex items-center gap-8 text-white  pb-1">
+                  
+                </div>
+                <div
+                  style={{ transform: `translateX(${offsetLeft}px)` }}
+                  className="  transition duration-300 w-[30px] h-[2px] bg-white"
+                ></div>
+              </div>
+              <div className="flex items-center gap-8 text-white  pb-1">
                     <div className=" flex items-center gap-2">
                       <div className="">USD</div>
                       <IoMdArrowDropdown />
                     </div>
+                    <Link to={`/reservation`}>
                     <div className=" cursor-pointer text-[13px] font-[600] tracking-[2px]">
                       <Button text="BOOK NOW" />
                     </div>
+                    </Link>
                   </div>
-                </div>
-                <div
-                  style={{ transform: `translateX(${offsetLeft}px)` }}
-                  className=" -mt-[10px] transition duration-300 w-[30px] h-[2px] bg-white"
-                ></div>
-              </div>
             </div>
 
 
