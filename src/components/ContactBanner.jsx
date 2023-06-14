@@ -6,9 +6,8 @@ import Button from "../utils/Button";
 import { IoMdArrowDropdown } from "react-icons/io";
 import CustomDropdown from "../utils/CustomDropdown";
 import { useRef, useState } from "react";
-import {motion as m} from 'framer-motion'
 
-const ContactBanner = ({
+const OurTeamBanner = ({
   openLoginModal,
   setOpenLoginModal,
   openSignUpModal,
@@ -99,7 +98,7 @@ const ContactBanner = ({
                       onMouseLeave={handleDropdownClose}
                       className={`${
                         isDropdownOpen ? "opacity-100" : "opacity-0"
-                      } cursor-default absolute top-14 transition duration-500 bg-white w-52 shadow py-5 px-4 flex flex-col space-y-5 z-[100]`}
+                      } cursor-default absolute top-8 transition duration-500 bg-white w-52 shadow py-5 px-4 flex flex-col space-y-5 z-[100]`}
                     >
                       <NavLink
                         to={"/about-us"}
@@ -155,29 +154,32 @@ const ContactBanner = ({
                   >
                     CONTACT
                   </NavLink>
-                  <div className="flex items-center gap-8 text-white">
+                  
+                </div>
+                <div
+                  style={{ transform: `translateX(${offsetLeft}px)` }}
+                  className=" transition duration-300 w-[30px] h-[2px] bg-white"
+                ></div>
+              </div>
+              <div className="flex items-center gap-8 text-white">
                     <div className=" flex items-center gap-2">
                       <div className="">USD</div>
                       <IoMdArrowDropdown />
                     </div>
+                    <Link to={`/reservation`}>
                     <div className=" cursor-pointer">
                       <Button text="BOOK NOW" />
                     </div>
+                    </Link>
                   </div>
-                </div>
-                <div
-                  style={{ transform: `translateX(${offsetLeft}px)` }}
-                  className=" -mt-[10px] transition duration-300 w-[30px] h-[2px] bg-white"
-                ></div>
-              </div>
             </div>
           </div>
-          <m.div initial={{y:"100",opacity:0}} whileInView={{y:0,opacity:1}} transition={{duration:1.5,type:"spring"}}  className=" px-5 lg:px-0 text-center text-white mt-20 space-y-5 md:max-w-[70%] mx-auto">
+          <div className=" px-5 lg:px-0 text-center text-white mt-20 space-y-5 md:max-w-[70%] mx-auto">
             <h1 className=" text-[40px] md:text-[98px] font-[400]">Contact Us</h1>
             <p className=" text-[31px] font-[400] tracking-[3px]">
               Get Intouch
             </p>
-          </m.div>
+          </div>
         </div>
       </div>
     </>
@@ -188,4 +190,4 @@ const ContactBanner = ({
 //   text: "About Us",
 // };
 
-export default ContactBanner;
+export default OurTeamBanner;
