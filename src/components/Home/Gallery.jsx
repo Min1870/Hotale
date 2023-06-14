@@ -41,6 +41,9 @@ const Gallery = () => {
           perPage: 4,
           perMove: 1,
           pagination: false,
+          autoplay: true,
+          type: "loop",
+          cover: false,
           breakpoints: {
             1200: {
               perPage: 3,

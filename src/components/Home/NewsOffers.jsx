@@ -7,9 +7,9 @@ import "./customSplide.css";
 import { motion } from "framer-motion";
 
 const bottomVariants = {
-  hidden : {opacity: 0, y: 100},
-  visible : {opacity: 1, y: 0, transition: {duration: 0.5}},
-}
+  hidden: { opacity: 0, y: 100 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
 
 const NewsOffers = () => {
   const news = [
@@ -71,17 +71,26 @@ const NewsOffers = () => {
       <div className="flex justify-center items-center flex-col gap-10 relative">
         <div className="h-[600px] bg-[#F8F8F8] w-[500px] rounded-3xl absolute left-28 top-28 -z-50 hidden lg:block"></div>
 
-        <motion.div viewport={{once: true, amount: 0.5}} initial="hidden" whileInView="visible" variants={bottomVariants} className="w-[85%] mx-auto">
+        <motion.div
+          viewport={{ once: true, amount: 0.5 }}
+          initial="hidden"
+          whileInView="visible"
+          variants={bottomVariants}
+          className="w-[85%] mx-auto"
+        >
           <Splide
             options={{
               perPage: 3,
               perMove: 1,
               gap: "2rem",
-              arrows: true,
+              arrows: false,
+              autoplay: true,
+              type: "loop",
+              cover: false,
               pagination: false,
               breakpoints: {
                 1200: {
-                  arrows: true,
+                  arrows: false,
                   perPage: 3,
                 },
                 800: {

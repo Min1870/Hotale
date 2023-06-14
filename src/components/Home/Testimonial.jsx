@@ -74,8 +74,9 @@ const Testimonial = () => {
         <Splide
           id="testimonial"
           options={{
-            type: "loop",
             autoplay: true,
+            type: "loop",
+            cover: false,
             perPage: 2,
             breakpoints: {
               1200: { arrows: false },

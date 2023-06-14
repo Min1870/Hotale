@@ -103,7 +103,7 @@ const Banner = () => {
             >
               <div
                 style={{ transform: `translateX(${offsetLeft}px)` }}
-                className=" absolute mt-[30px] transition duration-300 w-[30px] h-[2px] bg-white"
+                className=" absolute mt-[30px] transition duration-300 w-[18px] h-[2px] bg-white"
               ></div>
               <NavLink
                 to={"/"}

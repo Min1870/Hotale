@@ -87,6 +87,9 @@ const HotelReview = () => {
             className=" overflow-visible"
             options={{
               perPage: 3,
+              autoplay: true,
+              type: "loop",
+              cover: false,
               focus: 0,
               omitEnd: true,
               gap: 20,
@@ -137,6 +140,9 @@ const HotelReview = () => {
             options={{
               perPage: 1,
               arrows: false,
+              autoplay: true,
+              cover: false,
+              type: "loop",
               pagination: true,
               classes: {
                 pagination: "splide__pagination bottom-pagination",
