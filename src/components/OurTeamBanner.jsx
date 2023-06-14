@@ -34,7 +34,7 @@ const OurTeamBanner = ({
   };
   return (
     <>
-      <div className=" bg-contactBgGradient overflow-hidden bg-cover rounded-[20px] min-h-[60vh] md:min-h-[100vh] bg-no-repeat relative">
+      <div className=" bg-contactBgGradient overflow-hidden bg-cover rounded-[20px] min-h-[60vh] md:min-h-[70vh] lg:min-h-[100vh] bg-no-repeat relative">
         <div className=" text-white">
           <div className=" py-8 px-10 space-y-10 hidden lg:block">
             <div className=" flex items-center justify-between">
@@ -174,7 +174,7 @@ const OurTeamBanner = ({
             </div>
           </div>
           <div className=" px-5 lg:px-0 text-center text-white mt-20 space-y-5 md:max-w-[70%] mx-auto">
-            <h1 className=" text-[40px] md:text-[98px] font-[400]">Our Team</h1>
+            <h1 className=" text-[40px] md:text-[98px] font-[400]">Our team</h1>
             <p className=" text-[31px] font-[400] tracking-[3px]">
               Our staff and fellows are well experienced in hospitality
               industry.
