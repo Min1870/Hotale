@@ -140,7 +140,6 @@ const AboutUsBanner = ({
                   >
                     CONTACT
                   </NavLink>
-                  
                 </div>
                 <div
                   style={{ transform: `translateX(${offsetLeft}px)` }}
@@ -148,18 +147,17 @@ const AboutUsBanner = ({
                 ></div>
               </div>
               <div className="flex items-center gap-8 text-white  pb-1">
-                    <div className=" flex items-center gap-2">
-                      <div className="">USD</div>
-                      <IoMdArrowDropdown />
-                    </div>
-                    <div className=" cursor-pointer text-[13px] font-[600] tracking-[2px]">
-                      <Button text="BOOK NOW" />
-                    </div>
+                <div className=" flex items-center gap-2">
+                  <div className="">USD</div>
+                  <IoMdArrowDropdown />
+                </div>
+                <Link to={`/reservation`}>
+                  <div className=" cursor-pointer text-[13px] font-[600] tracking-[2px]">
+                    <Button text="BOOK NOW" />
                   </div>
+                </Link>
+              </div>
             </div>
-
-
-            
           </div>
           {/* <div className=" text-center text-white mt-20 space-y-5 md:max-w-[60%] mx-auto">
             <h1 className=" text-[40px] md:text-[98px] font-[400]">Our Team</h1>
