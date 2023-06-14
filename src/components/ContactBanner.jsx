@@ -7,7 +7,7 @@ import { IoMdArrowDropdown } from "react-icons/io";
 import CustomDropdown from "../utils/CustomDropdown";
 import { useRef, useState } from "react";
 
-const OurTeamBanner = ({
+const ContactBanner = ({
   openLoginModal,
   setOpenLoginModal,
   openSignUpModal,
@@ -190,4 +190,4 @@ const OurTeamBanner = ({
 //   text: "About Us",
 // };
 
-export default OurTeamBanner;
+export default ContactBanner;
