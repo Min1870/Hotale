@@ -152,9 +152,11 @@ const AboutUsBanner = ({
                       <div className="">USD</div>
                       <IoMdArrowDropdown />
                     </div>
+                    <Link to={`/reservation`}>
                     <div className=" cursor-pointer text-[13px] font-[600] tracking-[2px]">
                       <Button text="BOOK NOW" />
                     </div>
+                    </Link>
                   </div>
             </div>
 

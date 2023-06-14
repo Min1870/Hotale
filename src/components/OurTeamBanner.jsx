@@ -34,7 +34,7 @@ const OurTeamBanner = ({
   };
   return (
     <>
-      <div className=" bg-contactBgGradient overflow-hidden bg-cover rounded-[20px] min-h-[60vh] md:min-h-[100vh] bg-no-repeat relative">
+      <div className=" bg-contactBgGradient overflow-hidden bg-cover rounded-[20px] min-h-[60vh] md:min-h-[70vh] lg:min-h-[100vh] bg-no-repeat relative">
         <div className=" text-white">
           <div className=" py-8 px-10 space-y-10 hidden lg:block">
             <div className=" flex items-center justify-between">
@@ -166,9 +166,11 @@ const OurTeamBanner = ({
                       <div className="">USD</div>
                       <IoMdArrowDropdown />
                     </div>
+                    <Link to={`/reservation`}>
                     <div className=" cursor-pointer">
                       <Button text="BOOK NOW" />
                     </div>
+                    </Link>
                   </div>
             </div>
           </div>
