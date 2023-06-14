@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { FiPhone } from "react-icons/fi";
 import { FaRegEnvelope, FaLocationArrow,FaEnvelope,FaSkype,FaFacebookF,FaTwitter } from "react-icons/fa";
 import contactBg from "../assets/contactBg.jpg";
 import {motion as m} from 'framer-motion';
 
+import LoginModal from "../components/LoginModal";
+import SignupModal from "../components/SignupModal";
+import { AnimatePresence, motion } from "framer-motion";
+import ContactBanner from "../components/ContactBanner";
+
+
 const Contact = () => {
+  const [openLoginModal, setOpenLoginModal] = useState(false);
+  const [openSignUpModal, setOpenSignUpModal] = useState(false);
   const inputStyle = {
     color: "#4e4e4e",
     backgroundColor: "#f2f2f2",
@@ -17,24 +25,38 @@ const Contact = () => {
 
   return (
     <>
-
-      <m.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} transition={{duration:0.5}}  className=" overflow-hidden">
-    {/* banner */}
-    <div
-        className="w-full md:h-screen h-[300px] object-cover mt-5 md:mt-0 "
-        style={{ background: `url(${contactBg})`,backgroundSize: "cover",backgroundPosition:"center"}}
+{/* 
+      <m.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} transition={{duration:0.5}}  className=" overflow-hidden"> */}
+    <AnimatePresence>
+        {openLoginModal && <LoginModal setOpenLoginModal={setOpenLoginModal} />}
+        {openSignUpModal && (
+          <SignupModal setOpenSignUpModal={setOpenSignUpModal} />
+        )}
+      </AnimatePresence>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.5 }}
+        className="pb-20 overflow-hidden"
       >
+        <ContactBanner
+          openLoginModal={openLoginModal}
+          setOpenLoginModal={setOpenLoginModal}
+          openSignUpModal={openSignUpModal}
+          setOpenSignUpModal={setOpenSignUpModal}
+        />
 
         {/* title */}
-        <div className="flex h-[100%] items-center justify-center">
+        {/* <div className="flex h-[100%] items-center justify-center">
           <m.div initial={{y:"100"}} whileInView={{y:0}} transition={{duration:2,type:"spring"}} className="text-center">
             <h3 className="text-[40px] md:text-[75px] text-[#fff] font-[600]">Contact us</h3>
             <span className="text-[25px] mt-[15px] text-[#e5e5e5]">
               get in touch
             </span>
           </m.div>
-        </div>
-      </div>
+        </div> */}
+      
 
       <div className="bg-[#191919] px-[50px] pt-[20px] pb-[50px]">
         <div className="grid grid-cols-1 md:grid-cols-3 ">
@@ -134,7 +156,7 @@ const Contact = () => {
           <FaTwitter className="mr-[40px] cursor-pointer"/>
         </a>
       </div>
-      </m.div>
+      </motion.div>
   
 
       <footer />
