@@ -20,17 +20,18 @@ const OurRooms = () => {
               perMove: 1,
               gap: "10px",
               padding: { left: "20px" },
-              arrows: false,
+              arrows: true,
               autoplay: true,
               type: "loop",
               cover: false,
               pagination: false,
               breakpoints: {
                 1200: {
-                  arrows: false,
+                  // arrows: false,
                   perPage: 2,
                 },
                 800: {
+                  arrows: false,
                   perPage: 2,
                   gap: "20px",
                   padding: "10px",

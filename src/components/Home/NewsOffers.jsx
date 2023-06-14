@@ -83,14 +83,14 @@ const NewsOffers = () => {
               perPage: 3,
               perMove: 1,
               gap: "2rem",
-              arrows: false,
+              arrows: true,
               autoplay: true,
               type: "loop",
               cover: false,
               pagination: false,
               breakpoints: {
                 1200: {
-                  arrows: false,
+                  // arrows: false,
                   perPage: 3,
                 },
                 800: {
