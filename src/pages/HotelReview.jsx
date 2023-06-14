@@ -29,7 +29,9 @@ const HotelReview = () => {
   const [openLoginModal, setOpenLoginModal] = useState(false);
   const [openSignUpModal, setOpenSignUpModal] = useState(false);
   const navigate = useNavigate();
-
+  window.scrollTo({
+    top: 0,
+  });
   return (
     <>
       <AnimatePresence>

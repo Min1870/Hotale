@@ -3,35 +3,43 @@ import BtnAbout from "../components/BtnAbout";
 import AboutUsBanner from "../components/AboutUsBanner";
 import LoginModal from "../components/LoginModal";
 import SignupModal from "../components/SignupModal";
-import { AnimatePresence, motion} from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 const variants = {
-  hidden : {opacity: 0, y:75},
-  visible : {opacity: 1, y: 0, transition: {duration: 0.5}},
-}
+  hidden: { opacity: 0, y: 75 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
 
 const leftVariants = {
-  hidden : {opacity: 0, x:-75},
-  visible : {opacity: 1, x:0, transition: {duration: 0.5}},
-}
+  hidden: { opacity: 0, x: -75 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
+};
 const rightVariants = {
-  hidden : {opacity: 0, x: 75},
-  visible : {opacity: 1, x: 0, transition: {duration: 0.5}},
-}
+  hidden: { opacity: 0, x: 75 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
+};
 
 const About = () => {
   const [openLoginModal, setOpenLoginModal] = useState(false);
   const [openSignUpModal, setOpenSignUpModal] = useState(false);
-
+  window.scrollTo({
+    top: 0,
+  });
   return (
     <>
-     <AnimatePresence>
-     {openLoginModal && <LoginModal setOpenLoginModal={setOpenLoginModal} />}
-      {openSignUpModal && (
-        <SignupModal setOpenSignUpModal={setOpenSignUpModal} />
-      )}
-     </AnimatePresence>
-      <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} transition={{duration:0.5}} className="">
+      <AnimatePresence>
+        {openLoginModal && <LoginModal setOpenLoginModal={setOpenLoginModal} />}
+        {openSignUpModal && (
+          <SignupModal setOpenSignUpModal={setOpenSignUpModal} />
+        )}
+      </AnimatePresence>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.5 }}
+        className=""
+      >
         <AboutUsBanner
           openLoginModal={openLoginModal}
           setOpenLoginModal={setOpenLoginModal}
@@ -42,7 +50,13 @@ const About = () => {
             <h1 className=" text-[40px] md:text-[70px] font-[400]">About Us</h1>
           </div>
         </AboutUsBanner>
-        <motion.div viewport={{once: true, amount: 0.3}} initial="hidden" whileInView="visible" variants={variants} className=" py-[50px] md:py-[75px] mx-auto space-y-5 text-center w-[80%] md:w-[55%]">
+        <motion.div
+          viewport={{ once: true, amount: 0.3 }}
+          initial="hidden"
+          whileInView="visible"
+          variants={variants}
+          className=" py-[50px] md:py-[75px] mx-auto space-y-5 text-center w-[80%] md:w-[55%]"
+        >
           <h1 className=" font-allison text-[55px] lg:text-[80px] leading-[66px]">
             Visit Our Famous Facilities
           </h1>
@@ -65,7 +79,13 @@ const About = () => {
                 alt=""
               />
             </div>
-            <motion.div viewport={{once: true, amount: 0.5}} initial="hidden" whileInView="visible" variants={rightVariants} className=" space-y-10 w-[90%]">
+            <motion.div
+              viewport={{ once: true, amount: 0.5 }}
+              initial="hidden"
+              whileInView="visible"
+              variants={rightVariants}
+              className=" space-y-10 w-[90%]"
+            >
               <h1 className=" text-[30px] font-[500] tracking-[1px]">
                 3 Michelin Stars Restaurant, Vézère
               </h1>
@@ -79,7 +99,13 @@ const About = () => {
           </div>
           {/* photo two  */}
           <div className=" py-[50px] md:grid md:grid-cols-2 flex flex-col-reverse gap-10 md:gap-20">
-            <motion.div viewport={{once: true, amount: 0.5}} initial="hidden" whileInView="visible" variants={leftVariants} className=" space-y-10 w-[90%]">
+            <motion.div
+              viewport={{ once: true, amount: 0.5 }}
+              initial="hidden"
+              whileInView="visible"
+              variants={leftVariants}
+              className=" space-y-10 w-[90%]"
+            >
               <h1 className=" text-[30px] font-[500] tracking-[1px]">
                 The Penthouse Bar, An iconic american bar
               </h1>
@@ -108,7 +134,13 @@ const About = () => {
                 alt=""
               />
             </div>
-            <motion.div viewport={{once: true, amount: 0.5}} initial="hidden" whileInView="visible" variants={rightVariants} className=" space-y-10 w-[90%]">
+            <motion.div
+              viewport={{ once: true, amount: 0.5 }}
+              initial="hidden"
+              whileInView="visible"
+              variants={rightVariants}
+              className=" space-y-10 w-[90%]"
+            >
               <h1 className=" text-[30px] font-[500] tracking-[1px]">
                 The Spa. Refresh Yourself
               </h1>

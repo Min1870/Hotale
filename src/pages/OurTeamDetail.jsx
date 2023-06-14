@@ -26,7 +26,9 @@ const OurTeamDetail = () => {
   const [openSignUpModal, setOpenSignUpModal] = useState(false);
   const { id } = useParams();
   const [person, setPerson] = useState(null);
-
+  window.scrollTo({
+    top: 0,
+  });
   useEffect(() => {
     setPerson(teamMembers.find((member) => member.id == id));
   }, [person]);

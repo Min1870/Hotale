@@ -30,7 +30,9 @@ const Reservation = () => {
 
   const [roomSizeToggle, setRoomSizeToggle] = useState(true);
   const [facilitiesToggle, setFacilitiesToggle] = useState(true);
-
+  window.scrollTo({
+    top: 0,
+  });
   return (
     <motion.div
       className=""

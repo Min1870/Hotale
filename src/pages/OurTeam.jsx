@@ -10,6 +10,9 @@ import { AnimatePresence, motion } from "framer-motion";
 const OurTeam = () => {
   const [openLoginModal, setOpenLoginModal] = useState(false);
   const [openSignUpModal, setOpenSignUpModal] = useState(false);
+  window.scrollTo({
+    top: 0,
+  });
   return (
     <>
       <AnimatePresence>

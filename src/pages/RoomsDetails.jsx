@@ -22,7 +22,9 @@ const RoomsDetails = () => {
   useEffect(() => {
     setRoom(rooms.find((el) => el?.id === roomid));
   }, [rooms]);
-
+  window.scrollTo({
+    top: 0,
+  });
   const [openLoginModal, setOpenLoginModal] = useState(false);
   const [openSignUpModal, setOpenSignUpModal] = useState(false);
 
