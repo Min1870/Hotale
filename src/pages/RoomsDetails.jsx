@@ -11,7 +11,7 @@ import { GiResize } from "react-icons/gi";
 import { hotelAmenities, roomAmenities } from "../utils/amenities";
 import RoomSizeModal from "../components/ReservationModals/RoomSizeModal";
 
-import ImgSlideCarousel from "../components/RoomsDetail/imgSlideCarousel";
+import ImgSlideCarousel from "../components/RoomsDetail/ImgSlideCarousel";
 import RoomCarousel from "../components/RoomsDetail/RoomCarousel";
 import BookingForm from "../components/RoomsDetail/BookingForm";
 
