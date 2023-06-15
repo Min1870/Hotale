@@ -1,11 +1,11 @@
 import { BsTelephone } from "react-icons/bs";
 import { HiOutlineMail } from "react-icons/hi";
 import logo from "../assets/logo.png";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import Button from "../utils/Button";
 import { IoMdArrowDropdown } from "react-icons/io";
 import CustomDropdown from "../utils/CustomDropdown";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const OurTeamBanner = ({
   openLoginModal,
@@ -14,24 +14,34 @@ const OurTeamBanner = ({
   setOpenSignUpModal,
 }) => {
   const [offsetLeft, setOffsetLeft] = useState(0);
+  const [active, setActive] = useState(0)
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const closeTimeoutRef = useRef(null);
+  const location = useLocation()
+  const homeRef = useRef(null);
+  const aboutRef = useRef(null);
+  const roomRef = useRef(null);
+  const reservationRef = useRef(null);
+  const blogRef = useRef(null);
+  const contactRef = useRef(null);
 
-  const handleDropdownToggle = () => {
-    setIsDropdownOpen(!isDropdownOpen);
-  };
-
-  const handleDropdownClose = () => {
-    closeTimeoutRef.current = setTimeout(() => {
-      setIsDropdownOpen(false);
-    }, 200);
-  };
-
-  const handleDropdownCancelClose = () => {
-    if (closeTimeoutRef.current) {
-      clearTimeout(closeTimeoutRef.current);
+  useEffect(()=> {
+    if(location.pathname === "/about-us" || location.pathname === "/our-team" || location.pathname === "/hotel-review"){
+        setActive(aboutRef.current.offsetLeft)
+        setOffsetLeft(aboutRef.current.offsetLeft)
+    }else if(location.pathname === "/rooms"){
+      setActive(roomRef.current.offsetLeft)
+      setOffsetLeft(roomRef.current.offsetLeft)
+    }else if(location.pathname === "/reservation"){
+      setActive(reservationRef.current.offsetLeft)
+      setOffsetLeft(reservationRef.current.offsetLeft)
+    }else if(location.pathname === "/blogs"){
+      setActive(blogRef.current.offsetLeft)
+      setOffsetLeft(blogRef.current.offsetLeft)
+    }else if(location.pathname === "/contact"){
+      setActive(contactRef.current.offsetLeft)
+      setOffsetLeft(contactRef.current.offsetLeft)
     }
-  };
+  }, [])
   return (
     <>
       <div className=" bg-contactBgGradient overflow-hidden bg-cover rounded-[20px] min-h-[60vh] md:min-h-[70vh] lg:min-h-[100vh] bg-no-repeat relative">
@@ -73,7 +83,7 @@ const OurTeamBanner = ({
                 />
               </Link>
               <div
-              onMouseLeave={() => setOffsetLeft(0)}
+              onMouseLeave={() => setOffsetLeft(active)}
               className=" relative flex gap-10 text-white tracking-widest text-[13px] font-semibold "
             >
               <div
@@ -84,6 +94,7 @@ const OurTeamBanner = ({
                 to={"/"}
                 className=" pb-1"
                 onMouseEnter={(e) => setOffsetLeft(e.target.offsetLeft)}
+                ref={homeRef}
               >
                 HOME
               </NavLink>
@@ -96,6 +107,7 @@ const OurTeamBanner = ({
                     setOffsetLeft(e.target.offsetLeft);
                   }}
                   onMouseLeave={() => setIsDropdownOpen(false)}
+                  ref={aboutRef}
                 >
                   PAGES
                 </NavLink>
@@ -137,6 +149,7 @@ const OurTeamBanner = ({
                 to={"/rooms"}
                 className=" pb-1"
                 onMouseEnter={(e) => setOffsetLeft(e.target.offsetLeft)}
+                ref={roomRef}
               >
                 ROOMS
               </NavLink>
@@ -144,6 +157,7 @@ const OurTeamBanner = ({
                 to={"/reservation"}
                 className=" pb-1"
                 onMouseEnter={(e) => setOffsetLeft(e.target.offsetLeft)}
+                ref={reservationRef}
               >
                 RESERVATION
               </NavLink>
@@ -151,6 +165,7 @@ const OurTeamBanner = ({
                 to={"/blogs"}
                 className=" pb-1"
                 onMouseEnter={(e) => setOffsetLeft(e.target.offsetLeft)}
+                ref={blogRef}
               >
                 BLOG
               </NavLink>
@@ -158,6 +173,7 @@ const OurTeamBanner = ({
                 to={"/contact"}
                 className=" pb-1"
                 onMouseEnter={(e) => setOffsetLeft(e.target.offsetLeft)}
+                ref={contactRef}
               >
                 CONTACT
               </NavLink>

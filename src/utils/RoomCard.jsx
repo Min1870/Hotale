@@ -43,7 +43,7 @@ const RoomCard = ({ room }) => {
           </div>
         </div>
         <Link
-          to={""}
+          to={`/roomsDetails/${room?.id}`}
           className=" hover-underline-animation_room gap-2 items-center justify-center mb-[30px] py-2 text-sm font-semibold tracking-[2px] text-center text-black uppercase focus:ring-4 focus:outline-none"
         >
           <span>Book Now</span>

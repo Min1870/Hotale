@@ -1,11 +1,11 @@
 import { BsTelephone } from "react-icons/bs";
 import { HiOutlineMail } from "react-icons/hi";
 import logo from "../assets/logo.png";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation, useParams } from "react-router-dom";
 import Button from "../utils/Button";
 import { IoMdArrowDropdown } from "react-icons/io";
 import CustomDropdown from "../utils/CustomDropdown";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const AboutUsBanner = ({
   openLoginModal,
@@ -14,8 +14,36 @@ const AboutUsBanner = ({
   setOpenSignUpModal,
   children,
 }) => {
+  const {id} = useParams()
   const [offsetLeft, setOffsetLeft] = useState(0);
+  const [active, setActive] = useState(0)
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const location = useLocation()
+  const homeRef = useRef(null);
+  const aboutRef = useRef(null);
+  const roomRef = useRef(null);
+  const reservationRef = useRef(null);
+  const blogRef = useRef(null);
+  const contactRef = useRef(null);
+
+  useEffect(()=> {
+    if(location.pathname === "/about-us" || location.pathname === "/our-team" || location.pathname === "/hotel-review"){
+        setActive(aboutRef.current.offsetLeft)
+        setOffsetLeft(aboutRef.current.offsetLeft)
+    }else if(location.pathname === "/rooms" || location.pathname === `/roomsDetails/${id}`){
+      setActive(roomRef.current.offsetLeft)
+      setOffsetLeft(roomRef.current.offsetLeft)
+    }else if(location.pathname === "/reservation"){
+      setActive(reservationRef.current.offsetLeft)
+      setOffsetLeft(reservationRef.current.offsetLeft)
+    }else if(location.pathname === "/blogs"){
+      setActive(blogRef.current.offsetLeft)
+      setOffsetLeft(blogRef.current.offsetLeft)
+    }else if(location.pathname === "/contact"){
+      setActive(contactRef.current.offsetLeft)
+      setOffsetLeft(contactRef.current.offsetLeft)
+    }
+  }, [])
   return (
     <>
       <div className="  pt-8 px-10 bg-bannerBg overflow-hidden bg-cover rounded-[20px] max-h-[65vh] md:max-h-[100vh] bg-no-repeat relative">
@@ -57,7 +85,7 @@ const AboutUsBanner = ({
                 />
               </Link>
               <div
-              onMouseLeave={() => setOffsetLeft(0)}
+              onMouseLeave={() => setOffsetLeft(active)}
               className=" relative flex gap-10 text-white tracking-widest text-[13px] font-semibold "
             >
               <div
@@ -68,6 +96,7 @@ const AboutUsBanner = ({
                 to={"/"}
                 className=" pb-1"
                 onMouseEnter={(e) => setOffsetLeft(e.target.offsetLeft)}
+                ref={homeRef}
               >
                 HOME
               </NavLink>
@@ -80,6 +109,7 @@ const AboutUsBanner = ({
                     setOffsetLeft(e.target.offsetLeft);
                   }}
                   onMouseLeave={() => setIsDropdownOpen(false)}
+                  ref={aboutRef}
                 >
                   PAGES
                 </NavLink>
@@ -121,6 +151,7 @@ const AboutUsBanner = ({
                 to={"/rooms"}
                 className=" pb-1"
                 onMouseEnter={(e) => setOffsetLeft(e.target.offsetLeft)}
+                ref={roomRef}
               >
                 ROOMS
               </NavLink>
@@ -128,6 +159,7 @@ const AboutUsBanner = ({
                 to={"/reservation"}
                 className=" pb-1"
                 onMouseEnter={(e) => setOffsetLeft(e.target.offsetLeft)}
+                ref={reservationRef}
               >
                 RESERVATION
               </NavLink>
@@ -135,6 +167,7 @@ const AboutUsBanner = ({
                 to={"/blogs"}
                 className=" pb-1"
                 onMouseEnter={(e) => setOffsetLeft(e.target.offsetLeft)}
+                ref={blogRef}
               >
                 BLOG
               </NavLink>
@@ -142,6 +175,7 @@ const AboutUsBanner = ({
                 to={"/contact"}
                 className=" pb-1"
                 onMouseEnter={(e) => setOffsetLeft(e.target.offsetLeft)}
+                ref={contactRef}
               >
                 CONTACT
               </NavLink>
