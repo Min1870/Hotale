@@ -4,13 +4,14 @@ import { HiOutlineEnvelope } from "react-icons/hi2";
 import { IoMenuSharp } from "react-icons/io5";
 import logo from "../assets/logo.png";
 import Button from "../utils/Button";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation, useParams } from "react-router-dom";
 import CustomDropdown from "../utils/CustomDropdown";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { BsChevronRight } from "react-icons/bs";
 import LoginModal from "../components/LoginModal";
 import SignupModal from "../components/SignupModal";
 import { AnimatePresence, motion } from "framer-motion";
+
 const Header = () => {
   const [showNav, setShowNav] = useState(false);
   const [mobileNav, setMobileNav] = useState(false);
@@ -20,6 +21,7 @@ const Header = () => {
   const [openLoginModal, setOpenLoginModal] = useState(false);
   const [openSignUpModal, setOpenSignUpModal] = useState(false);
   const [active, setActive] = useState(0)
+  const {id} = useParams()
 
   const location = useLocation()
   const homeRef = useRef(null);
@@ -37,13 +39,13 @@ const Header = () => {
     else if(location.pathname === "/about-us" || location.pathname === "/our-team" || location.pathname === "/hotel-review"){
         setActive(aboutRef.current.offsetLeft)
         setOffsetLeft(aboutRef.current.offsetLeft)
-    }else if(location.pathname === "/rooms"){
+    }else if(location.pathname === "/rooms" || location.pathname === `/roomsDetails/${id}`){
       setActive(roomRef.current.offsetLeft)
       setOffsetLeft(roomRef.current.offsetLeft)
     }else if(location.pathname === "/reservation"){
       setActive(reservationRef.current.offsetLeft)
       setOffsetLeft(reservationRef.current.offsetLeft)
-    }else if(location.pathname === "/blogs"){
+    }else if(location.pathname === "/blogs" || location.pathname === `/blogDetails/${id}`){
       setActive(blogRef.current.offsetLeft)
       setOffsetLeft(blogRef.current.offsetLeft)
     }else if(location.pathname === "/contact"){

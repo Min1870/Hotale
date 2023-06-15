@@ -52,7 +52,7 @@ const RoomsDetails = () => {
         <div className="flex flex-wrap gap-10 my-10 md:my-[80px] mx-5">
           <div className="w-full md:w-[70%]">
             <img
-              className="w-full mb-10 h-[100px] md:h-[400px] object-cover rounded-3xl"
+              className="w-full mb-10 h-[200px] md:h-[400px] object-cover rounded-3xl"
               src={room?.img}
               alt=""
             />
@@ -227,7 +227,7 @@ const RoomsDetails = () => {
       </div>
 
       {/* image carousel */}
-      <div className="mb-[100px]">
+      <div className="mb-[100px] max-h-fit">
         <ImgSlideCarousel />
       </div>
       <hr className="mb-[100px]" />
