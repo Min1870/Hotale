@@ -12,6 +12,8 @@ import GuestModalHome from "./homeBanner/GuestModalHome";
 import LoginModal from "../components/LoginModal";
 import SignupModal from "../components/SignupModal";
 import { AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
+
 
 const Banner = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -287,12 +289,12 @@ const Banner = () => {
 
           <div className="absolute w-full h-full">
             <div className=" flex flex-col justify-center lg:justify-end items-center h-[50%]">
-              <h3 className=" font-allison text-[80px] md:text-[126px] text-center leading-[100px] pb-[30px] text-[#FFF] -rotate-[4deg]">
+              <motion.h1 initial={{opacity:0, y: 100}} animate={{opacity:1, y: 0, rotate: -4}} transition={{duration:1}} className=" font-allison text-[80px] md:text-[126px] text-center leading-[100px] pb-[30px] text-[#FFF] -rotate-[4deg]">
                 Book Your Vacation
-              </h3>
-              <p className=" text-center text-[#FFFFFF] text-[22px] px-[20px] pb-[30px] mb-[20px]">
+              </motion.h1>
+              <motion.p initial={{opacity:0, y: 100}} animate={{opacity:1, y: 0}} transition={{duration:0.5, delay:1}} className=" text-center text-[#FFFFFF] text-[22px] px-[20px] pb-[30px] mt-0 lg:mt-10 mb-[20px]">
                 Explore new experience with Hotale
-              </p>
+              </motion.p>
             </div>
 
             <div className=" absolute w-full h-[50%] bottom-10  flex justify-center items-start md:items-end md:bottom-40 lg:bottom-20">
