@@ -149,7 +149,7 @@ const Banner = () => {
       <div className="relative h-[130vh] lg:h-[136vh] mt-24 lg:m-0">
         {/* Laptop Navbar */}
         <div className=" relative top-0 bg-homeBg  w-full h-full bg-center bg-cover bg-no-repeat rounded-[20px]">
-          <div className="hidden lg:flex min-w-full items-center justify-between absolute z-50 text-black px-[40px] xl:px-[120px] top-8">
+          <div className="hidden lg:flex min-w-full items-center justify-between absolute z-50 text-black px-[40px] xl:px-[90px] top-8">
             <div className=" text-white flex items-center gap-5">
               <div className="flex items-center gap-2 text-[15px]">
                 <BsTelephone />
@@ -176,7 +176,7 @@ const Banner = () => {
             </div>
           </div>
 
-          <div className="hidden lg:flex min-w-full items-center absolute z-50 text-black px-[40px] xl:px-[120px] justify-between top-20">
+          <div className="hidden lg:flex max-w-full items-center absolute z-50 text-black px-[40px] xl:px-[90px] justify-between top-20">
             <Link to="/">
               <img src={logo} alt="" className="w-[147px] h-[37px] mb-3" />
             </Link>
