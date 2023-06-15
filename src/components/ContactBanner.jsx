@@ -1,11 +1,13 @@
 import { BsChevronRight, BsTelephone } from "react-icons/bs";
 import { HiOutlineMail } from "react-icons/hi";
 import logo from "../assets/logo.png";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import Button from "../utils/Button";
 import { IoMdArrowDropdown } from "react-icons/io";
 import CustomDropdown from "../utils/CustomDropdown";
 import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
+
 
 const ContactBanner = ({
   openLoginModal,
@@ -14,7 +16,16 @@ const ContactBanner = ({
   setOpenSignUpModal,
 }) => {
   const [offsetLeft, setOffsetLeft] = useState(0);
+  const [active, setActive] = useState(0)
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const location = useLocation()
+  const contactRef = useRef(null)
+  useEffect(()=> {
+    if(location.pathname === "/contact"){
+        setActive(contactRef.current.offsetLeft)
+        setOffsetLeft(contactRef.current.offsetLeft)
+    }},[])
   const closeTimeoutRef = useRef(null);
 
   const [mobileNav, setMobileNav] = useState(false);
@@ -27,21 +38,10 @@ const ContactBanner = ({
     });
   }, [scrollY]);
 
-  const handleDropdownToggle = () => {
-    setIsDropdownOpen(!isDropdownOpen);
-  };
+ 
 
-  const handleDropdownClose = () => {
-    closeTimeoutRef.current = setTimeout(() => {
-      setIsDropdownOpen(false);
-    }, 200);
-  };
 
-  const handleDropdownCancelClose = () => {
-    if (closeTimeoutRef.current) {
-      clearTimeout(closeTimeoutRef.current);
-    }
-  };
+ 
   return (
     <>
       {/* Mobile Navbar */}
@@ -179,7 +179,7 @@ const ContactBanner = ({
                 />
               </Link>
               <div
-                onMouseLeave={() => setOffsetLeft(0)}
+                onMouseLeave={() => setOffsetLeft(active)}
                 className=" relative flex gap-10 text-white tracking-widest text-[13px] font-semibold "
               >
                 <div
@@ -264,6 +264,7 @@ const ContactBanner = ({
                   to={"/contact"}
                   className=" pb-1"
                   onMouseEnter={(e) => setOffsetLeft(e.target.offsetLeft)}
+                  ref={contactRef}
                 >
                   CONTACT
                 </NavLink>
@@ -282,12 +283,12 @@ const ContactBanner = ({
             </div>
           </div>
           <div className=" px-5 lg:px-0 text-center text-white mt-20 space-y-5 md:max-w-[70%] mx-auto">
-            <h1 className=" text-[40px] md:text-[98px] font-[400]">
+            <motion.h1 initial={{opacity:0, y: 100}} animate={{opacity:1, y: 0}} transition={{duration:0.5}} className=" text-[40px] md:text-[98px] font-[400]">
               Contact Us
-            </h1>
-            <p className=" text-[31px] font-[400] tracking-[3px]">
+            </motion.h1>
+            <motion.p initial={{opacity:0, y: 100}} animate={{opacity:1, y: 0}} transition={{duration:0.5, delay:0.5}} className=" text-[31px] font-[400] tracking-[3px]">
               Get Intouch
-            </p>
+            </motion.p>
           </div>
         </div>
       </div>

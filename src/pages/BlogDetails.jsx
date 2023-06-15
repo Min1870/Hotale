@@ -1,10 +1,11 @@
 import { BsChevronRight, BsTelephone } from "react-icons/bs";
 import { HiOutlineMail } from "react-icons/hi";
 import logo from "../assets/logo.png";
-import { Link, NavLink, useParams } from "react-router-dom";
+import { Link, NavLink, useLocation, useParams } from "react-router-dom";
 import Button from "../utils/Button";
 import { IoMdArrowDropdown } from "react-icons/io";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+
 import { VscQuote } from "react-icons/vsc";
 import { SlTag } from "react-icons/sl";
 import { GrNext } from "react-icons/gr";
@@ -19,15 +20,32 @@ import { AnimatePresence, motion } from "framer-motion";
 import LoginModal from "../components/LoginModal";
 import SignupModal from "../components/SignupModal";
 const BlogDetails = () => {
+
+  const {id} = useParams()
+
   window.scrollTo({
     top: 0,
     behavior: "smooth",
   });
+
   const [offsetLeft, setOffsetLeft] = useState(0);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const [openLoginModal, setOpenLoginModal] = useState(false);
   const [openSignUpModal, setOpenSignUpModal] = useState(false);
+  const [active, setActive] = useState(0)
+  const location = useLocation()
+  const blogRef = useRef(null)
+  useEffect(()=> {
+    if(location.pathname === `/blogDetails/${id}`){
+        setActive(blogRef.current.offsetLeft)
+        setOffsetLeft(blogRef.current.offsetLeft)
+    }
+  },[])
+
+  window.scrollTo({
+    top: 0,
+  });
 
   const [mobileNav, setMobileNav] = useState(false);
   const [accordian, setaccordian] = useState(false);
@@ -190,7 +208,7 @@ const BlogDetails = () => {
                   />
                 </Link>
                 <div
-                  onMouseLeave={() => setOffsetLeft(0)}
+                  onMouseLeave={() => setOffsetLeft(active)}
                   className=" relative flex gap-10 text-white tracking-widest text-[13px] font-semibold "
                 >
                   <div
@@ -268,6 +286,7 @@ const BlogDetails = () => {
                     to={"/blogs"}
                     className=" pb-1"
                     onMouseEnter={(e) => setOffsetLeft(e.target.offsetLeft)}
+                    ref={blogRef}
                   >
                     BLOG
                   </NavLink>

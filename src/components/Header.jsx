@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { HiOutlinePhone } from "react-icons/hi";
 import { HiOutlineEnvelope } from "react-icons/hi2";
 import { IoMenuSharp } from "react-icons/io5";
 import logo from "../assets/logo.png";
 import Button from "../utils/Button";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import CustomDropdown from "../utils/CustomDropdown";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { BsChevronRight } from "react-icons/bs";
@@ -19,6 +19,38 @@ const Header = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [openLoginModal, setOpenLoginModal] = useState(false);
   const [openSignUpModal, setOpenSignUpModal] = useState(false);
+  const [active, setActive] = useState(0)
+
+  const location = useLocation()
+  const homeRef = useRef(null);
+  const aboutRef = useRef(null);
+  const roomRef = useRef(null);
+  const reservationRef = useRef(null);
+  const blogRef = useRef(null);
+  const contactRef = useRef(null);
+
+  useEffect(()=> {
+    if(location.pathname === '/home'){
+      setActive(0)
+      setOffsetLeft(0)
+    }
+    else if(location.pathname === "/about-us" || location.pathname === "/our-team" || location.pathname === "/hotel-review"){
+        setActive(aboutRef.current.offsetLeft)
+        setOffsetLeft(aboutRef.current.offsetLeft)
+    }else if(location.pathname === "/rooms"){
+      setActive(roomRef.current.offsetLeft)
+      setOffsetLeft(roomRef.current.offsetLeft)
+    }else if(location.pathname === "/reservation"){
+      setActive(reservationRef.current.offsetLeft)
+      setOffsetLeft(reservationRef.current.offsetLeft)
+    }else if(location.pathname === "/blogs"){
+      setActive(blogRef.current.offsetLeft)
+      setOffsetLeft(blogRef.current.offsetLeft)
+    }else if(location.pathname === "/contact"){
+      setActive(contactRef.current.offsetLeft)
+      setOffsetLeft(contactRef.current.offsetLeft)
+    }}, [])
+
   useEffect(() => {
     window.addEventListener("scroll", () => {
       if (window.scrollY > 100) {
@@ -44,7 +76,7 @@ const Header = () => {
         <div className="flex justify-between items-center w-[90%] mx-auto py-5 relative z-50">
           <img src={logo} className="h-[37px]"></img>
           <div
-            onMouseLeave={() => setOffsetLeft(0)}
+            onMouseLeave={() => setOffsetLeft(active)}
             className=" relative hidden lg:flex gap-10 text-white tracking-widest text-[13px] font-semibold "
           >
             <div
@@ -55,6 +87,7 @@ const Header = () => {
               to={"/"}
               className=" pb-1"
               onMouseEnter={(e) => setOffsetLeft(e.target.offsetLeft)}
+              ref={homeRef}
             >
               HOME
             </NavLink>
@@ -67,6 +100,7 @@ const Header = () => {
                   setOffsetLeft(e.target.offsetLeft);
                 }}
                 onMouseLeave={() => setIsDropdownOpen(false)}
+                ref={aboutRef}
               >
                 PAGES
               </NavLink>
@@ -108,6 +142,7 @@ const Header = () => {
               to={"/rooms"}
               className=" pb-1"
               onMouseEnter={(e) => setOffsetLeft(e.target.offsetLeft)}
+              ref={roomRef}
             >
               ROOMS
             </NavLink>
@@ -115,6 +150,7 @@ const Header = () => {
               to={"/reservation"}
               className=" pb-1"
               onMouseEnter={(e) => setOffsetLeft(e.target.offsetLeft)}
+              ref={reservationRef}
             >
               RESERVATION
             </NavLink>
@@ -122,6 +158,7 @@ const Header = () => {
               to={"/blogs"}
               className=" pb-1"
               onMouseEnter={(e) => setOffsetLeft(e.target.offsetLeft)}
+              ref={blogRef}
             >
               BLOG
             </NavLink>
@@ -129,6 +166,7 @@ const Header = () => {
               to={"/contact"}
               className=" pb-1"
               onMouseEnter={(e) => setOffsetLeft(e.target.offsetLeft)}
+              ref={contactRef}
             >
               CONTACT
             </NavLink>

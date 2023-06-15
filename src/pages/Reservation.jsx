@@ -162,8 +162,8 @@ const Reservation = () => {
           <div className="w-full md:w-[60%] mx-0 md:mx-[38px] px-[15px]">
             {rooms.map((room) => {
               return (
-                <Link to={`/roomsDetails/${room?.id}`}>
-                  <div key={room?.id}>
+                <Link  key={room?.id} to={`/roomsDetails/${room?.id}`}>
+                  <div>
                     <div className="flex flex-wrap items-center gap-2 md:gap-0 pb-[60px]">
                       <div className="w-full lg:w-[40%]">
                         <div className="relative">
