@@ -32,6 +32,7 @@ const Reservation = () => {
   const [facilitiesToggle, setFacilitiesToggle] = useState(true);
   window.scrollTo({
     top: 0,
+    behavior: "smooth",
   });
   return (
     <motion.div
