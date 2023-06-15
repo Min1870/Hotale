@@ -146,9 +146,9 @@ const Banner = () => {
           </NavLink>
         </div>
       </div>
-      <div className="relative h-[120vh] mt-24 lg:m-0">
+      <div className="relative h-[130vh] lg:h-[136vh] mt-24 lg:m-0">
         {/* Laptop Navbar */}
-        <div className=" absolute top-0 bg-homeBg w-full h-full bg-center bg-cover bg-no-repeat rounded-[20px]">
+        <div className=" relative top-0 bg-homeBg  w-full h-full bg-center bg-cover bg-no-repeat rounded-[20px]">
           <div className="hidden lg:flex min-w-full items-center justify-between absolute z-50 text-black px-[40px] xl:px-[120px] top-8">
             <div className=" text-white flex items-center gap-5">
               <div className="flex items-center gap-2 text-[15px]">
@@ -282,13 +282,11 @@ const Banner = () => {
               </div>
             </div>
           </div>
-        </div>
-        <div className=" custom-gradient_top h-[344px] top-0 absolute w-full  rounded-[20px]"></div>
-        <div className=" custom-gradient_bottom h-[338px] absolute bottom-0  w-full rounded-[20px]"></div>
+          <div className=" custom-gradient_top h-[344px] top-0 absolute w-full  rounded-[20px]"></div>
+          <div className=" custom-gradient_bottom h-[338px] absolute bottom-0  w-full rounded-[20px]"></div>
 
-        <div className="absolute h-[115vh] md:h-[631px] w-full bottom-0">
-          <div className=" flex flex-col mt-2 md:mt-10 items-center ">
-            <div className="">
+          <div className="absolute w-full h-full">
+            <div className=" flex flex-col justify-center lg:justify-end items-center h-[50%]">
               <h3 className=" font-allison text-[80px] md:text-[126px] text-center leading-[100px] pb-[30px] text-[#FFF] -rotate-[4deg]">
                 Book Your Vacation
               </h3>
@@ -297,7 +295,7 @@ const Banner = () => {
               </p>
             </div>
 
-            <div className=" absolute bottom-5 lg:bottom-20">
+            <div className=" absolute w-full h-[50%] bottom-10  flex justify-center items-start md:items-end md:bottom-40 lg:bottom-20">
               <form className=" flex flex-col xl:flex-row gap-3 flex-wrap">
                 <div>
                   <div className="md:flex gap-[10px]">
@@ -313,7 +311,10 @@ const Banner = () => {
                 </div>
 
                 <div className=" md:w-full xl:w-[121px] bg-white py-[15px] px-[25px] rounded-md">
-                  <div className=" text-[#8f8f8f] cursor-pointer mb-[5px]">
+                  <div
+                    onClick={() => setRoomToggle((pre) => !pre)}
+                    className=" text-[#8f8f8f] cursor-pointer mb-[5px]"
+                  >
                     Room
                   </div>
                   <div className="flex items-center justify-between cursor-pointer">
@@ -340,7 +341,10 @@ const Banner = () => {
                   <div className=" text-[#8f8f8f] mb-[5px]">Guests</div>
                   <div className="flex items-center justify-between">
                     <div className=" w-full flex items-center gap-5 justify-between">
-                      <div>
+                      <div
+                        onClick={() => setGuestToggle((pre) => !pre)}
+                        className=" cursor-pointer select-none"
+                      >
                         <span className=" mr-4">Adult {adultNum}</span>
                         <span>children {childrenNum}</span>
                       </div>
@@ -368,7 +372,6 @@ const Banner = () => {
             </div>
           </div>
         </div>
-        <div></div>
       </div>
     </>
   );
