@@ -10,6 +10,7 @@ import { motion } from "framer-motion";
 const Home = () => {
   window.scrollTo({
     top: 0,
+    behavior: "smooth",
   });
   return (
     <motion.div

@@ -24,6 +24,7 @@ const RoomsDetails = () => {
   }, [rooms]);
   window.scrollTo({
     top: 0,
+    behavior: "smooth",
   });
   const [openLoginModal, setOpenLoginModal] = useState(false);
   const [openSignUpModal, setOpenSignUpModal] = useState(false);

@@ -9,6 +9,7 @@ import { AnimatePresence, motion } from "framer-motion";
 const Blog = () => {
   window.scrollTo({
     top: 0,
+    behavior: "smooth",
   });
   const [openLoginModal, setOpenLoginModal] = useState(false);
   const [openSignUpModal, setOpenSignUpModal] = useState(false);

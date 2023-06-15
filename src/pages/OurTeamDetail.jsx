@@ -28,6 +28,7 @@ const OurTeamDetail = () => {
   const [person, setPerson] = useState(null);
   window.scrollTo({
     top: 0,
+    behavior: "smooth",
   });
   useEffect(() => {
     setPerson(teamMembers.find((member) => member.id == id));

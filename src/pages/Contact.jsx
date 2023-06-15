@@ -19,6 +19,7 @@ import ContactBanner from "../components/ContactBanner";
 const Contact = () => {
   window.scrollTo({
     top: 0,
+    behavior: "smooth",
   });
   const [openLoginModal, setOpenLoginModal] = useState(false);
   const [openSignUpModal, setOpenSignUpModal] = useState(false);
