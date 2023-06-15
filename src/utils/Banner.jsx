@@ -176,7 +176,7 @@ const Banner = () => {
             </div>
           </div>
 
-          <div className="hidden lg:flex max-w-full items-center absolute z-50 text-black px-[40px] xl:px-[90px] justify-between top-20">
+          <div className="hidden lg:flex min-w-full items-center absolute z-50 text-black px-[40px] xl:px-[90px] justify-between top-20">
             <Link to="/">
               <img src={logo} alt="" className="w-[147px] h-[37px] mb-3" />
             </Link>
