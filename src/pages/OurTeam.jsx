@@ -35,7 +35,7 @@ const OurTeam = () => {
           openSignUpModal={openSignUpModal}
           setOpenSignUpModal={setOpenSignUpModal}
         />
-        <div className=" mt-20 md:mx-10 grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className=" lg:max-w-[1300px] lg:mx-auto mt-20 md:mx-10 grid md:grid-cols-2 lg:grid-cols-3 gap-10">
           {teamMembers?.map((member, i) => (
             <OurTeamCard key={member.id} member={member} index={i} />
           ))}
