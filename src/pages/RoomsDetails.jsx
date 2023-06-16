@@ -49,7 +49,8 @@ const RoomsDetails = () => {
           </div>
         </AboutUsBanner>
 
-        <div className="flex flex-wrap gap-10 my-10 md:my-[80px] mx-5">
+        <div className="w-full">
+           <div className="flex flex-wrap justify-center gap-10 my-10 md:my-[80px] md:max-w-[1300px] mx-5 md:mx-auto">
           <div className="w-full md:w-[70%]">
             <img
               className="w-full mb-10 h-[200px] md:h-[400px] object-cover rounded-3xl"
@@ -224,15 +225,17 @@ const RoomsDetails = () => {
             <BookingForm />
           </div>
         </div>
+        </div>
+       
       </div>
 
       {/* image carousel */}
-      <div className="mb-[100px] max-h-fit">
+      <div className="mb-20 max-h-fit mx-5">
         <ImgSlideCarousel />
       </div>
-      <hr className="mb-[100px]" />
+      <hr className="mb-10" />
 
-      <div className="mb-10">
+      <div className="mb-0 md:mb-10 mx-5">
         <h1 className="text-center text-[31px] font-[500] text-[#383838] mb-10">
           More Rooms
         </h1>

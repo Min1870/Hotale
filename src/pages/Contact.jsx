@@ -67,7 +67,7 @@ const Contact = () => {
         </div> */}
 
         <div className="bg-[#191919] px-[50px] pt-[20px] pb-[50px]">
-          <div className="grid grid-cols-1 md:grid-cols-3 ">
+          <div className="grid grid-cols-1 md:grid-cols-3 md:min-w-[1300px]">
             <m.div
               initial={{ y: "100", opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}

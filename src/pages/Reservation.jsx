@@ -65,9 +65,9 @@ const Reservation = () => {
       </div>
 
       <div className="w-full ">
-        <div className="flex flex-wrap justify-center w-[100%]  py-[60px]">
+        <div className="flex flex-wrap justify-center w-[100%] md:max-w-[1300px] mx-auto py-[60px]">
           {/* availability */}
-          <div className="w-full  md:w-[25%] px-5 mb-10">
+          <div className="w-full  md:w-[270px] px-5 mb-10">
             <h3 className="text-[26px] text-[#0c0c0c] font-[600] mb-[20px]">
               Check Availability
             </h3>
