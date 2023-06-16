@@ -140,7 +140,7 @@ const ContactBanner = ({
           </NavLink>
         </div>
       </div>
-      <div className="mt-24 lg:m-0 bg-contactBgGradient overflow-hidden bg-cover min-h-[60vh] md:min-h-[70vh] lg:min-h-[100vh] bg-no-repeat relative">
+      <div className="mt-24 lg:m-0 bg-contactBgGradient overflow-hidden bg-cover min-h-[40vh] md:min-h-[70vh] lg:min-h-[100vh] bg-no-repeat relative">
         <div className=" text-white max-w-[1400px] px-[40px] xl:px-[80px] mx-auto">
           <div className=" py-8 px-10 space-y-10 hidden lg:block">
             <div className=" flex items-center justify-between">
@@ -282,7 +282,8 @@ const ContactBanner = ({
               </div>
             </div>
           </div>
-          <div className=" px-5 lg:px-0 text-center text-white mt-20 space-y-5 md:max-w-[70%] mx-auto">
+          <div className="pb-20 md:pb-0 md:h-[60vh] flex items-center">
+            <div className=" px-5 lg:px-0 text-center text-white mt-20 space-y-5 md:max-w-[70%] mx-auto">
             <motion.h1 initial={{opacity:0, y: 100}} animate={{opacity:1, y: 0}} transition={{duration:0.5}} className=" text-[40px] md:text-[98px] font-[400]">
               Contact Us
             </motion.h1>
@@ -290,6 +291,8 @@ const ContactBanner = ({
               Get Intouch
             </motion.p>
           </div>
+          </div>
+          
         </div>
       </div>
     </>
