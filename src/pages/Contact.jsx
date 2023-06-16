@@ -29,7 +29,7 @@ const Contact = () => {
     outline: "none",
     width: "100%",
     padding: "20px 20px",
-    margin: "10px 10px",
+    marginBottom:"30px"
   };
 
   return (
@@ -134,20 +134,21 @@ const Contact = () => {
 
         {/* form */}
         <div className="grid grid-cols-1 place-items-center mb-20">
-          <div className="text-center my-10">
+          <div className="text-center my-20">
             <h1 className="text-[39px] font-[600]">Leave us your info</h1>
             <span className="text-[19px]">and we will get back to you.</span>
           </div>
 
           <form>
             <div className="md:w-[100vh] lg:max-w-[760px]">
-              <div className="md:flex  gap-5">
+              <div className="md:flex gap-7 w-full">
                 <input
                   type="text"
                   placeholder="Full Name*"
                   style={inputStyle}
+                  
                 />
-                <input type="text" placeholder="Email*" style={inputStyle} />
+                <input type="text" placeholder="Email*" style={inputStyle}/>
               </div>
               <input type="text" placeholder="Subject*" style={inputStyle} />
               <textarea type="text" placeholder="Message*" style={inputStyle} />
