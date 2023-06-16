@@ -20,8 +20,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import LoginModal from "../components/LoginModal";
 import SignupModal from "../components/SignupModal";
 const BlogDetails = () => {
-
-  const {id} = useParams()
+  const { id } = useParams();
 
   window.scrollTo({
     top: 0,
@@ -33,15 +32,15 @@ const BlogDetails = () => {
 
   const [openLoginModal, setOpenLoginModal] = useState(false);
   const [openSignUpModal, setOpenSignUpModal] = useState(false);
-  const [active, setActive] = useState(0)
-  const location = useLocation()
-  const blogRef = useRef(null)
-  useEffect(()=> {
-    if(location.pathname === `/blogDetails/${id}`){
-        setActive(blogRef.current.offsetLeft)
-        setOffsetLeft(blogRef.current.offsetLeft)
+  const [active, setActive] = useState(0);
+  const location = useLocation();
+  const blogRef = useRef(null);
+  useEffect(() => {
+    if (location.pathname === `/blogDetails/${id}`) {
+      setActive(blogRef.current.offsetLeft);
+      setOffsetLeft(blogRef.current.offsetLeft);
     }
-  },[])
+  }, []);
 
   window.scrollTo({
     top: 0,
@@ -171,7 +170,7 @@ const BlogDetails = () => {
         </div>
         <div className="bg-bannerBg overflow-hidden bg-cover max-h-[65vh] md:min-h-[600px] bg-no-repeat relative mt-20 lg:m-0">
           <div className=" text-white">
-            <div className=" pt-8 px-10 space-y-10 hidden lg:block">
+            <div className="max-w-[1300px] mx-auto pt-8 px-10 space-y-10 hidden lg:block">
               <div className=" flex items-center justify-between">
                 <div className="flex items-center gap-10 text-[15px] font-[400] tracking-[1px]">
                   <div className="flex items-center gap-2">
@@ -320,7 +319,7 @@ const BlogDetails = () => {
             </div>
           </div>
         </div>
-        <div className=" grid grid-cols-12 gap-8 my-10  xl:w-[90%] mx-auto">
+        <div className=" grid grid-cols-12 gap-8 my-10 max-w-[1300px] mx-auto">
           <div className="col-span-12 lg:col-span-8 text-[#656565]">
             <p className="leading-8 text-lg">
               <span className="font-bold">

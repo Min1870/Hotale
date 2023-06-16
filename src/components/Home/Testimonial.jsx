@@ -64,12 +64,14 @@ const Testimonial = () => {
     },
   ];
   return (
-    <div className="relative my-10">
+    <div
+      className="relative my-10 bg-none lg:bg-[url('https://a6e8z9v6.stackpathcdn.com/hotale/resort/wp-content/uploads/sites/2/2021/12/bg-testimonail.jpg')] bg-no-repeat pb-16 max-w-[1300px] mx-auto"
+      style={{ backgroundPosition: "top center" }}
+    >
       <TitlePara
         title="Testimonial"
         para="A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart."
       />
-      <div className="h-[500px] bg-[#F8F8F8] w-[900px] rounded-3xl absolute right-[20%] -z-50 hidden lg:block"></div>
       <div className="container mx-auto">
         <Splide
           id="testimonial"
