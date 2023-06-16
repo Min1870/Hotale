@@ -17,8 +17,7 @@ const rightVariants = {
 const Hero = () => {
   return (
     <>
-      <Banner />
-      <div className="flex items-center justify-between flex-wrap w-[85%] mx-auto mt-20 lg:mb-[400px] relative">
+      <div className="flex items-center justify-between flex-wrap max-w-[1300px] mx-auto mt-20 lg:mb-[400px] relative">
         <motion.div
           viewport={{ once: true, amount: 0.5 }}
           initial="hidden"

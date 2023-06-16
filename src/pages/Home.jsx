@@ -6,6 +6,7 @@ import Testimonial from "../components/Home/Testimonial";
 import NewsOffers from "../components/Home/NewsOffers";
 import NewsLetter from "../components/Home/NewsLetter";
 import { motion } from "framer-motion";
+import Banner from "../utils/Banner";
 
 const Home = () => {
   window.scrollTo({
@@ -20,6 +21,7 @@ const Home = () => {
       transition={{ duration: 0.5 }}
       className="overflow-hidden"
     >
+      <Banner />
       <Hero />
       <OurRooms />
       <Facilites />

@@ -63,14 +63,15 @@ const NewsOffers = () => {
     },
   ];
   return (
-    <div>
+    <div
+      className="max-w-[1300px] mx-auto h-[1150px] bg-none lg:bg-[url('https://a6e8z9v6.stackpathcdn.com/hotale/resort/wp-content/uploads/sites/2/2021/12/home-resort-news-bg.png')] bg-no-repeat"
+      style={{ backgroundPosition: "bottom center" }}
+    >
       <TitlePara
         title="News & Offers"
         para="A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart."
       />
       <div className="flex justify-center items-center flex-col gap-10 relative">
-        <div className="h-[600px] bg-[#F8F8F8] w-[500px] rounded-3xl absolute left-28 top-28 -z-50 hidden lg:block"></div>
-
         <motion.div
           viewport={{ once: true, amount: 0.5 }}
           initial="hidden"

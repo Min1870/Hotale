@@ -1,7 +1,10 @@
 import { Splide, SplideSlide } from "@splidejs/react-splide";
-import React from "react";
+import React, { useEffect } from "react";
 import "./customSplide.css";
 import { IoLogoInstagram } from "react-icons/io";
+import "venobox/dist/venobox";
+import "venobox/dist/venobox.min.css";
+import venobox from "venobox";
 const Gallery = () => {
   const photos = [
     {
@@ -33,6 +36,15 @@ const Gallery = () => {
       img: "https://a6e8z9v6.stackpathcdn.com/hotale/resort/wp-content/uploads/sites/2/2021/12/shutterstock_1298236804-600x600.jpg",
     },
   ];
+  useEffect(() => {
+    new venobox({
+      selector: ".image-link",
+      numeration: true,
+      infinigall: true,
+      share: true,
+      spinner: "rotating-plane",
+    });
+  }, []);
   return (
     <div className="w-[85%] mx-auto my-10">
       <Splide
@@ -59,7 +71,9 @@ const Gallery = () => {
         {photos.map((photo) => {
           return (
             <SplideSlide key={photo.id}>
-              <img src={photo.img} alt="" />
+              <a className="image-link" data-gall="gallery01" href={photo.img}>
+                <img src={photo.img} />
+              </a>
             </SplideSlide>
           );
         })}

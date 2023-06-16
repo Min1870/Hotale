@@ -4,7 +4,7 @@ import { BsSend } from "react-icons/bs";
 import Gallery from "./Gallery";
 const NewsLetter = () => {
   return (
-    <div className="my-10 relative">
+    <div className="my-10 relative -mt-10">
       <TitlePara
         title="Newsletter"
         para="Subscribe the newsletter to get updated to news and promotions"

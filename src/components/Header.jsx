@@ -20,10 +20,10 @@ const Header = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [openLoginModal, setOpenLoginModal] = useState(false);
   const [openSignUpModal, setOpenSignUpModal] = useState(false);
-  const [active, setActive] = useState(0)
-  const {id} = useParams()
+  const [active, setActive] = useState(0);
+  const { id } = useParams();
 
-  const location = useLocation()
+  const location = useLocation();
   const homeRef = useRef(null);
   const aboutRef = useRef(null);
   const roomRef = useRef(null);
@@ -31,27 +31,37 @@ const Header = () => {
   const blogRef = useRef(null);
   const contactRef = useRef(null);
 
-  useEffect(()=> {
-    if(location.pathname === '/home'){
-      setActive(0)
-      setOffsetLeft(0)
+  useEffect(() => {
+    if (location.pathname === "/home") {
+      setActive(0);
+      setOffsetLeft(0);
+    } else if (
+      location.pathname === "/about-us" ||
+      location.pathname === "/our-team" ||
+      location.pathname === "/hotel-review"
+    ) {
+      setActive(aboutRef.current.offsetLeft);
+      setOffsetLeft(aboutRef.current.offsetLeft);
+    } else if (
+      location.pathname === "/rooms" ||
+      location.pathname === `/roomsDetails/${id}`
+    ) {
+      setActive(roomRef.current.offsetLeft);
+      setOffsetLeft(roomRef.current.offsetLeft);
+    } else if (location.pathname === "/reservation") {
+      setActive(reservationRef.current.offsetLeft);
+      setOffsetLeft(reservationRef.current.offsetLeft);
+    } else if (
+      location.pathname === "/blogs" ||
+      location.pathname === `/blogDetails/${id}`
+    ) {
+      setActive(blogRef.current.offsetLeft);
+      setOffsetLeft(blogRef.current.offsetLeft);
+    } else if (location.pathname === "/contact") {
+      setActive(contactRef.current.offsetLeft);
+      setOffsetLeft(contactRef.current.offsetLeft);
     }
-    else if(location.pathname === "/about-us" || location.pathname === "/our-team" || location.pathname === "/hotel-review"){
-        setActive(aboutRef.current.offsetLeft)
-        setOffsetLeft(aboutRef.current.offsetLeft)
-    }else if(location.pathname === "/rooms" || location.pathname === `/roomsDetails/${id}`){
-      setActive(roomRef.current.offsetLeft)
-      setOffsetLeft(roomRef.current.offsetLeft)
-    }else if(location.pathname === "/reservation"){
-      setActive(reservationRef.current.offsetLeft)
-      setOffsetLeft(reservationRef.current.offsetLeft)
-    }else if(location.pathname === "/blogs" || location.pathname === `/blogDetails/${id}`){
-      setActive(blogRef.current.offsetLeft)
-      setOffsetLeft(blogRef.current.offsetLeft)
-    }else if(location.pathname === "/contact"){
-      setActive(contactRef.current.offsetLeft)
-      setOffsetLeft(contactRef.current.offsetLeft)
-    }}, [])
+  }, []);
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -75,7 +85,7 @@ const Header = () => {
           showNav ? "translate-y-0" : "-translate-y-full"
         }`}
       >
-        <div className="flex justify-between items-center w-[90%] mx-auto py-5 relative z-50">
+        <div className="flex justify-between items-center max-w-[1300px] mx-auto px-5 lg:px-0 py-5 relative z-50">
           <img src={logo} className="h-[37px]"></img>
           <div
             onMouseLeave={() => setOffsetLeft(active)}
