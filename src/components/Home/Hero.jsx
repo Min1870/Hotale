@@ -6,20 +6,26 @@ import Banner from "../../utils/Banner";
 import { motion } from "framer-motion";
 
 const leftVariants = {
-  hidden : {opacity: 0, x:-75},
-  visible : {opacity: 1, x:0, transition: {duration: 0.5}},
-}
+  hidden: { opacity: 0, x: -75 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
+};
 const rightVariants = {
-  hidden : {opacity: 0, x: 75},
-  visible : {opacity: 1, x: 0, transition: {duration: 0.5}},
-}
+  hidden: { opacity: 0, x: 75 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
+};
 
 const Hero = () => {
   return (
     <>
       <Banner />
       <div className="flex items-center justify-between flex-wrap w-[85%] mx-auto mt-20 lg:mb-[400px] relative">
-        <motion.div viewport={{once: true, amount: 0.5}} initial="hidden" whileInView="visible" variants={leftVariants} className="flex flex-col items-start gap-20 w-[90%] mb-5 lg:m-0 lg:w-[50%] ">
+        <motion.div
+          viewport={{ once: true, amount: 0.5 }}
+          initial="hidden"
+          whileInView="visible"
+          variants={leftVariants}
+          className="flex flex-col items-start gap-20 w-[90%] mb-5 lg:m-0 lg:w-[50%] "
+        >
           <h1 className="text-2xl tracking-[.6rem]">
             <span className="text-6xl font-medium">5</span> stars{" "}
             <span className="text-6xl font-medium ml-9">25</span> rooms
@@ -32,7 +38,13 @@ const Hero = () => {
             More About Us <HiOutlineChevronRight className="text-xl" />
           </button>
         </motion.div>
-        <motion.div viewport={{once: true, amount: 0.5}} initial="hidden" whileInView="visible" variants={rightVariants} className="rounded-tl-3xl rounded-br-3xl overflow-hidden">
+        <motion.div
+          viewport={{ once: true, amount: 0.5 }}
+          initial="hidden"
+          whileInView="visible"
+          variants={rightVariants}
+          className="rounded-tl-3xl rounded-br-3xl overflow-hidden"
+        >
           <img src={resortSwim} alt="" className="h-[500px]" />
         </motion.div>
         <div className="absolute -bottom-96 right-0 hidden xl:block">
