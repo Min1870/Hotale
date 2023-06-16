@@ -55,15 +55,15 @@ const OurTeamDetail = () => {
           openSignUpModal={openSignUpModal}
           setOpenSignUpModal={setOpenSignUpModal}
         >
-          <div className=" min-h-[400px] md:my-12 flex flex-col justify-center">
-            <div className=" lg:grid lg:grid-cols-4 md:gap-10 lg:gap-16 px-10 flex flex-col items-center justify-center">
+          <div className=" min-h-[400px] md:my-12 flex flex-col justify-center items-center">
+            <div className=" lg:grid lg:grid-cols-4 md:gap-10 lg:gap-[200px] flex flex-col items-center justify-center">
               <img
-                className=" max-w-[250px] rounded-full lg:col-span-1"
+                className=" max-w-[200px] md:max-w-[250px] rounded-full lg:col-span-1"
                 src={person?.image}
                 alt=""
               />
-              <div className=" lg:col-span-3 ">
-                <h1 className=" font-[700] text-[40px] md:text-[75px] mb-2 md:mb-4">
+              <div className=" lg:col-span-3">
+                <h1 className=" font-[700] text-[30px] md:text-[40px] lg:text-[75px] mb-2 md:mb-4">
                   {person?.name}
                 </h1>
                 <div className=" bg-white max-w-[100px] h-[3px] mb-4 md:mb-8"></div>

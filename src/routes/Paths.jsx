@@ -17,7 +17,7 @@ import { AnimatePresence } from "framer-motion";
 const Paths = () => {
   const location = useLocation();
   return (
-    <div className=" font-jost px-5 py-5">
+    <div className=" font-jost px-5 py-5 ">
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Layout />}>
