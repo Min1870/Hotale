@@ -35,10 +35,10 @@ const Blog = () => {
         >
           <div className=" text-center text-white min-h-[350px] lg:mb-10 flex flex-col items-center justify-center space-y-5 md:max-w-[60%] mx-auto">
             <h1 className=" text-[40px] md:text-[70px] font-[400]">
-              Hotel Review
+              Blogs
             </h1>
             <p className=" text-[28px] font-[400] ">
-              Hotels for the elite passionate about luxury
+              Our Recent Articles
             </p>
           </div>
         </AboutUsBanner>
