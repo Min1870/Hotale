@@ -13,6 +13,7 @@ import Contact from "../pages/Contact";
 import RoomsDetails from "../pages/RoomsDetails";
 import OurTeamDetail from "../pages/OurTeamDetail";
 import { AnimatePresence } from "framer-motion";
+import PagesNotFound from "../pages/PagesNotFound";
 
 const Paths = () => {
   const location = useLocation();
@@ -32,6 +33,7 @@ const Paths = () => {
             <Route path="blogs" element={<Blog />} />
             <Route path="blogDetails/:id" element={<BlogDetails />} />
             <Route path="contact" element={<Contact />} />
+            <Route path="*" element={<PagesNotFound/>} />
           </Route>
         </Routes>
       </AnimatePresence>
