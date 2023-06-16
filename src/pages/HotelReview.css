@@ -34,12 +34,6 @@
     transform: scale(1.5);
 }
 
-@media (max-width: 500px) {
-  .bottom-pagination {
-    margin-bottom: 1rem;
-  }
-}
-
 @media (max-width: 800px) {
     .bottom-pagination {
       margin-bottom: 2rem;
@@ -49,6 +43,12 @@
   @media (max-width: 1000px) {
     .bottom-pagination {
       margin-bottom: 4rem;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .bottom-pagination {
+      margin-bottom: 1rem;
     }
   }
 
