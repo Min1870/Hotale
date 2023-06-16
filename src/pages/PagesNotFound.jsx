@@ -37,7 +37,7 @@ const PagesNotFound = () => {
   
    
     return (
-      <>
+      <div className="mb-10">
         {/* Mobile Navbar */}
         <div className="lg:hidden flex min-w-full items-center justify-between py-5 px-5 xl:px-[120px] text-white bg-black z-50 absolute top-0 left-0">
           <Link to="/">
@@ -289,7 +289,7 @@ const PagesNotFound = () => {
             </div>
           </div>
         </div>
-      </>
+      </div>
     );
 }
 

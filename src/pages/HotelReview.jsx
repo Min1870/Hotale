@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import AboutUsBanner from "../components/AboutUsBanner";
 import SignupModal from "../components/SignupModal";
 import LoginModal from "../components/LoginModal";
@@ -10,6 +10,10 @@ import "./HotelReview.css";
 import Review from "../components/Review";
 import { topReviews } from "../utils/teamMember";
 import { AnimatePresence, motion } from "framer-motion";
+import 'venobox/dist/venobox'
+import 'venobox/dist/venobox.min.css'
+import venobox from 'venobox';
+
 
 const variants = {
   hidden: { opacity: 0, y: 75 },
@@ -33,6 +37,12 @@ const HotelReview = () => {
     top: 0,
     behavior: "smooth",
   });
+
+  useEffect(()=> {
+    new venobox({
+      selector: '.my-video-links',
+    });
+  },[])
   return (
     <>
       <AnimatePresence>
@@ -80,7 +90,7 @@ const HotelReview = () => {
           initial="hidden"
           whileInView="visible"
           variants={variants}
-          className=" pb-[100px] mx-10"
+          className=" top-review-carousel lg:max-w-[1300px] lg:mx-auto pb-[100px] mx-10 relative"
         >
           {/* Slider  */}
           <Splide
@@ -93,7 +103,7 @@ const HotelReview = () => {
               cover: false,
               focus: 0,
               omitEnd: true,
-              gap: 20,
+              gap: 30,
               arrows: false,
               pagination: true,
               preloadPages: 2,
@@ -159,13 +169,13 @@ const HotelReview = () => {
           </Splide>
         </motion.div>
 
-        <div className=" py-[50px] grid md:grid-cols-2 px-10 gap-20 md:gap-10 overflow-hidden">
+        <div className="lg:max-w-[1300px] mx-auto hotel-review relative py-[50px] grid md:grid-cols-2 px-10 gap-20 md:gap-10 overflow-hidden">
           <motion.div
             viewport={{ once: true, amount: 0.5 }}
             initial="hidden"
             whileInView="visible"
             variants={leftVariants}
-            className=" space-y-8 w-[90%] md:mt-20"
+            className=" space-y-8 w-[90%] lg:mt-20"
           >
             <h1 className=" text-[24px] font-[500] leading-[28px]">
               3 Michelin Stars Restaurant, Vézère
@@ -187,7 +197,7 @@ const HotelReview = () => {
             variants={rightVariants}
             className=" overflow-hidden relative"
           >
-            <a href="https://www.youtube.com/watch?time_continue=2&v=US7bGTUkBfg&feature=emb_title">
+            <a  className="my-video-links" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?time_continue=2&v=US7bGTUkBfg&feature=emb_title">
               <img
                 className=" w-full object-cover  rounded-[20px] "
                 src="https://a6e8z9v6.stackpathcdn.com/hotale/resort/wp-content/uploads/sites/2/2022/01/review-video-player-bg.jpg"

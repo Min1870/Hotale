@@ -52,6 +52,24 @@
     }
   }
 
+  .top-review-carousel::before {
+    content: url('https://a6e8z9v6.stackpathcdn.com/hotale/resort/wp-content/uploads/sites/2/2021/12/bg-testimonail-1.jpg');
+    position: absolute;
+    /* transform: translateX(-300px) translateY(-250px); */
+    top: -250px;
+    left: -350px;
+   z-index: -1;
+  }
+
+  .hotel-review::before{
+    content: url('https://a6e8z9v6.stackpathcdn.com/hotale/resort/wp-content/uploads/sites/2/2022/01/review-video-bg-1.png');
+    position: absolute;
+    z-index: -1;
+    top: -75px;
+    left: 200px;
+
+  }
+
 
 
 

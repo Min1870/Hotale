@@ -10,7 +10,7 @@ const BookingForm = () => {
   const [guestToggle, setGuestToggle] = useState(false);
   const [adultNum, setAdultNum] = useState(2);
   const [childrenNum, setChildrenNum] = useState(0);
-  const [enquiryToggle, setEnquiryToggle] = useState(false);
+  const [enquiryToggle, setEnquiryToggle] = useState(true);
 
   return (
     <>
@@ -27,16 +27,16 @@ const BookingForm = () => {
           <div className="w-full px-5 mb-10">
             <div>
               {/* MUI DatePicker  */}
-              <div className="mb-5 w-full">
+              <div className="mb-3 w-full">
                 <h1 className="text-lg text-[#656565]">Check In</h1>
                 <DatePickerReservation />
               </div>
-              <div className="mb-5 w-full">
+              <div className="mb-3 w-full">
                 <h1 className="text-lg text-[#656565]">Check Out</h1>
                 <DatePickerReservation />
               </div>
 
-              <div className="mb-5 relative">
+              <div className="mb-3 relative">
                 <h1 className="text-lg text-[#656565]">Room</h1>
                 <div className="flex justify-between bg-[#f5f5f5] py-[25px]">
                   <span className="ms-[25px]">{roomNum}</span>
@@ -47,7 +47,7 @@ const BookingForm = () => {
                 </div>
               </div>
 
-              <div className="mb-8 relative">
+              <div className="mb-3 relative">
                 <h1 className="text-lg text-[#656565]">Guests</h1>
                 <div className="flex justify-between bg-[#f5f5f5] py-[25px]">
                   <div className="flex gap-3 ms-[25px]">

@@ -51,6 +51,7 @@ const About = () => {
             <h1 className=" text-[40px] md:text-[70px] font-[400]">About Us</h1>
           </div>
         </AboutUsBanner>
+       <div className="lg:max-w-[1300px] lg:mx-auto">
        <motion.div
           viewport={{ once: true, amount: 0.3 }}
           initial="hidden"
@@ -70,7 +71,7 @@ const About = () => {
           </div>
         </motion.div>
         {/* section 2  */}
-        <div className=" md:mx-10 md:space-y-10 overflow-hidden">
+        <div style={{backgroundPosition: "center top"}} className="md:space-y-8 overflow-hidden bg-no-repeat md:bg-[url('https://a6e8z9v6.stackpathcdn.com/hotale/resort/wp-content/uploads/sites/2/2021/12/grey-color.jpg')]">
           {/* photo one  */}
           <div className=" py-[50px] grid md:grid-cols-2 gap-10 md:gap-20">
             <div className=" overflow-hidden">
@@ -180,6 +181,7 @@ const About = () => {
             </div>
           </div>
         </div>
+       </div>
 
         {/* section four  */}
         <div className="overflow-hidden bg-cover rounded-[20px] h-[80vh] relative flex justify-center items-center bg-[url('https://a6e8z9v6.stackpathcdn.com/hotale/resort/wp-content/uploads/sites/2/2022/01/shutterstock_783346942.jpg')]">
@@ -197,7 +199,7 @@ const About = () => {
           <div className=" absolute top-0 left-0 w-full h-full bg-[#00000045] z-10"></div>
         </div>
         {/* section sticker  */}
-        <div className=" py-[100px] md:grid md:grid-cols-6 flex flex-col items-center gap-10 md:gap-0 mx-0 md:mx-10">
+        <div className=" lg:max-w-[1300px] lg:mx-auto py-[100px] md:grid md:grid-cols-6 flex flex-col items-center gap-10 md:gap-0 mx-0 md:mx-10">
           <div className="">
             <img
               className=" max-w-[100px] md:max-w-[120px] lg:max-w-[180px]  "
