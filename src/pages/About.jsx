@@ -51,7 +51,7 @@ const About = () => {
             <h1 className=" text-[40px] md:text-[70px] font-[400]">About Us</h1>
           </div>
         </AboutUsBanner>
-        <motion.div
+       <motion.div
           viewport={{ once: true, amount: 0.3 }}
           initial="hidden"
           whileInView="visible"
@@ -182,7 +182,7 @@ const About = () => {
         </div>
 
         {/* section four  */}
-        <div className=" overflow-hidden bg-cover rounded-[20px] h-[80vh] relative flex justify-center items-center bg-[url('https://a6e8z9v6.stackpathcdn.com/hotale/resort/wp-content/uploads/sites/2/2022/01/shutterstock_783346942.jpg')]">
+        <div className="overflow-hidden bg-cover rounded-[20px] h-[80vh] relative flex justify-center items-center bg-[url('https://a6e8z9v6.stackpathcdn.com/hotale/resort/wp-content/uploads/sites/2/2022/01/shutterstock_783346942.jpg')]">
           <div className=" w-[90%] md:w-[60%] text-center z-20">
             <h1 className=" text-[#fff] text-[40px] md:text-[60px] font-[400]">
               Choose from a wide range of{" "}
@@ -241,6 +241,7 @@ const About = () => {
             />
           </div>
         </div>
+     
       </motion.div>
     </>
   );
