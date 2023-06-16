@@ -72,7 +72,7 @@ const OurTeamDetail = () => {
             </div>
           </div>
         </AboutUsBanner>
-        <div className=" md:mx-10 mt-20 gap-20 grid md:grid-cols-3 lg:grid-cols-4">
+        <div className=" lg:max-w-[1300px] lg:mx-auto md:mx-10 mt-20 gap-20 grid md:grid-cols-3 lg:grid-cols-4">
           {/* left  */}
           <motion.div
             viewport={{ once: true }}
