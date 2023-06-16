@@ -67,7 +67,7 @@ const Contact = () => {
         </div> */}
 
         <div className="bg-[#191919] px-[50px] pt-[20px] pb-[50px]">
-          <div className="grid grid-cols-1 md:grid-cols-3 md:min-w-[1300px]">
+          <div className="grid grid-cols-1 md:grid-cols-3 mx-auto md:max-w-[1140px]">
             <m.div
               initial={{ y: "100", opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
@@ -133,14 +133,14 @@ const Contact = () => {
         </div>
 
         {/* form */}
-        <div className="grid grid-cols-1 place-items-center mb-10">
+        <div className="grid grid-cols-1 place-items-center mb-20">
           <div className="text-center my-10">
             <h1 className="text-[39px] font-[600]">Leave us your info</h1>
             <span className="text-[19px]">and we will get back to you.</span>
           </div>
 
           <form>
-            <div className="md:w-[100vh]">
+            <div className="md:w-[100vh] lg:max-w-[760px]">
               <div className="md:flex  gap-5">
                 <input
                   type="text"
@@ -159,15 +159,15 @@ const Contact = () => {
           </form>
         </div>
 
-        <div>
+        <div className="mb-20">
           <iframe
-            className="w-full h-[50vh] md:h-screen saturate-0"
+            className="w-full h-[50vh] md:h-screen 2xl:h-[50vh] saturate-0"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d169896.21834138833!2d-0.3277803942789503!3d51.54588730583371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon%2C%20UK!5e0!3m2!1sen!2smm!4v1686222391767!5m2!1sen!2smm"
           ></iframe>
         </div>
 
         {/* social media link */}
-        <div className="flex justify-center items-center my-[80px] text-[#1e1e1e] text-[20px]">
+        <div className="flex justify-center items-center text-[#1e1e1e] text-[20px]">
           <a href="mailto:#">
             <FaEnvelope className="  mr-[40px] cursor-pointer" />
           </a>

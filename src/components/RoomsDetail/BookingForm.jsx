@@ -10,7 +10,7 @@ const BookingForm = () => {
   const [guestToggle, setGuestToggle] = useState(false);
   const [adultNum, setAdultNum] = useState(2);
   const [childrenNum, setChildrenNum] = useState(0);
-  const [enquiryToggle, setEnquiryToggle] = useState(false);
+  const [enquiryToggle, setEnquiryToggle] = useState(true);
 
   return (
     <>

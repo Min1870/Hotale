@@ -36,7 +36,7 @@ const Reservation = () => {
   });
   return (
     <motion.div
-      className=""
+      className="overflow-hidden"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -64,10 +64,10 @@ const Reservation = () => {
         </AboutUsBanner>
       </div>
 
-      <div className="w-full ">
-        <div className="flex flex-wrap justify-center w-[100%] md:max-w-[1300px] mx-auto py-[60px]">
+      <div className="w-full">
+        <div className="flex flex-wrap justify-center gap-5 w-[100%] md:max-w-[1300px] mx-auto py-[60px]">
           {/* availability */}
-          <div className="w-full  md:w-[270px] px-5 mb-10">
+          <div className="w-full md:w-[270px] mb-10">
             <h3 className="text-[26px] text-[#0c0c0c] font-[600] mb-[20px]">
               Check Availability
             </h3>
@@ -159,12 +159,12 @@ const Reservation = () => {
           </div>
 
           {/* rooms */}
-          <div className="w-full md:w-[60%] mx-0 md:mx-[38px] px-[15px]">
+          <div className="w-full md:w-[60%] mx-0 px-[15px]">
             {rooms.map((room) => {
               return (
                 <Link  key={room?.id} to={`/roomsDetails/${room?.id}`}>
-                  <div>
-                    <div className="flex flex-wrap items-center gap-2 md:gap-0 pb-[60px]">
+                  
+                    <div className="flex flex-wrap w-full items-center gap-2 md:gap-0 pb-[60px]">
                       <div className="w-full lg:w-[40%]">
                         <div className="relative">
                           <img className="w-full" src={room?.img} />
@@ -241,7 +241,7 @@ const Reservation = () => {
                         </div>
                       </div>
                     </div>
-                  </div>
+                  
                 </Link>
               );
             })}
