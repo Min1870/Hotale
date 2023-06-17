@@ -153,7 +153,7 @@ const OurTeamBanner = ({
         </div>
       </div>
       <div className="mt-24 lg:m-0 bg-contactBgGradient overflow-hidden bg-cover rounded-[20px] min-h-[60vh] md:min-h-[70vh] lg:min-h-[100vh] bg-no-repeat relative">
-        <div className=" text-white">
+        <div className=" text-white   max-w-[1300px] mx-auto">
           <div className=" py-8 px-10 space-y-10 hidden lg:block">
             <div className=" flex items-center justify-between">
               <div className="flex items-center gap-10">
