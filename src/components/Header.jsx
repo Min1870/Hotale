@@ -85,7 +85,7 @@ const Header = () => {
           showNav ? "translate-y-0" : "-translate-y-full"
         }`}
       >
-        <div className="flex justify-between items-center max-w-[1300px] mx-auto px-5 lg:px-0 py-5 relative z-50">
+        <div className="flex justify-between items-center max-w-[1300px] mx-auto px-5 xl:px-0 py-5 relative z-50">
           <img src={logo} className="h-[37px]"></img>
           <div
             onMouseLeave={() => setOffsetLeft(active)}
