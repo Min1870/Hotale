@@ -156,7 +156,7 @@ const OurTeamBanner = ({
           </NavLink>
         </div>
       </div>
-      <div className="mt-24 lg:m-0 bg-contactBgGradient overflow-hidden bg-cover rounded-[20px] h-[65vh] md:h-[100vh] 2xl:h-[65vh]  bg-no-repeat relative">
+      <div className="mt-24 lg:m-0 bg-contactBgGradient overflow-hidden bg-cover rounded-[20px] h-[65vh] md:h-[100vh] bg-no-repeat relative">
         <div className=" text-white max-w-[1300px] mx-auto">
           <div className=" py-8 px-10 2xl:px-0 space-y-10 hidden lg:block">
             <div className=" flex items-center justify-between">
