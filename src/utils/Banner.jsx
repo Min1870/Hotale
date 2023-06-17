@@ -51,7 +51,7 @@ const Banner = () => {
         )}
       </AnimatePresence>
       {/* Mobile Navbar */}
-      <div className="lg:hidden flex max-w-[1320px] items-center justify-between py-5 px-5 xl:px-[120px] text-white bg-black z-50 absolute top-0 left-0">
+      <div className="lg:hidden flex min-w-full items-center justify-between py-5 px-5 xl:px-[120px] text-white bg-black z-50 absolute top-0 left-0">
         <Link to="/">
           <img src={logo} alt="" className="w-[147px] h-[37px]" />
         </Link>
