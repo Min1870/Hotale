@@ -147,10 +147,10 @@ const Banner = () => {
           </NavLink>
         </div>
       </div>
-      <div className="relative h-[120vh] md:h-[100vh] mt-24 lg:m-0">
+      <div className="relative h-[120vh] md:min-h-[100vh] mt-24 lg:m-0">
         {/* Laptop Navbar */}
         <div className=" relative top-0 bg-homeBg  w-full h-full bg-center bg-cover bg-no-repeat rounded-[20px]">
-          <div className=" relative max-w-[1300px] mx-auto">
+          <div className=" relative max-w-[1300px] h-[15%] mx-auto">
             <div className="hidden lg:flex min-w-full items-center justify-between absolute z-50 text-black px-[40px] xl:px-[90px] top-8">
               <div className=" text-white flex items-center gap-5">
                 <div className="flex items-center gap-2 text-[15px]">
@@ -289,14 +289,14 @@ const Banner = () => {
           <div className=" custom-gradient_top h-[344px] top-0 absolute w-full  rounded-[20px]"></div>
           <div className=" custom-gradient_bottom h-[338px] absolute bottom-0  w-full rounded-[20px]"></div>
 
-          <div className="  w-full text-center min-h-[400px] md:min-h-[706px] md:pt-[280px] pb-[80px]">
-            <div className=" max-w-[1320px] mx-auto flex flex-col items-center justify-center  px-[20px]">
-              <div className="  flex flex-col items-center justify-center">
+          <div className="  w-full text-center h-[85%]">
+            <div className=" max-w-[1320px] mx-auto flex flex-col items-center lg:pt-[20px] justify-center  px-[20px]">
+              <div className="  flex flex-col top-2 absolute md:relative h-[40%] lg:pt-[50px] xl:pt-[90px] 2xl:pt-[150px] items-center justify-center">
                 <motion.h1
                   initial={{ opacity: 0, y: 100 }}
                   animate={{ opacity: 1, y: 0, rotate: -4 }}
                   transition={{ duration: 1 }}
-                  className=" font-allison  text-[70px] md:text-[126px] text-center leading-[100px] pb-[30px] text-[#FFF] -rotate-[4deg]"
+                  className=" font-allison  text-[65px] md:text-[126px] text-center leading-[100px] pb-[30px] text-[#FFF] -rotate-[4deg]"
                 >
                   Book Your Vacation
                 </motion.h1>
@@ -310,7 +310,7 @@ const Banner = () => {
                 </motion.p>
               </div>
 
-              <form className=" absolute bottom-3 md:bottom-28 flex flex-col xl:flex-row gap-3 flex-wrap">
+              <form className=" absolute bottom-0 md:bottom-10 flex flex-col xl:flex-row gap-3 flex-wrap">
                 <div>
                   <div className="md:flex gap-[10px]">
                     <div className=" md:w-1/2 bg-white py-[15px] px-[25px] rounded-md mb-3 md:mb-0">
