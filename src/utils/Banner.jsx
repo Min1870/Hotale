@@ -310,7 +310,7 @@ const Banner = () => {
                 </motion.p>
               </div>
 
-              <form className=" absolute bottom-3 md:bottom-10 2xl:bottom-[25%] flex flex-col xl:flex-row gap-3 flex-wrap">
+              <form className=" absolute bottom-3 md:bottom-10 2xl:bottom-[15%] flex flex-col xl:flex-row gap-3 flex-wrap">
                 <div>
                   <div className="md:flex gap-[10px]">
                     <div className=" md:w-1/2 bg-white py-[15px] px-[25px] rounded-md mb-3 md:mb-0">
