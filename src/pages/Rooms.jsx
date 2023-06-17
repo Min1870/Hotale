@@ -39,7 +39,7 @@ const Rooms = () => {
             </h1>
           </div>
         </AboutUsBanner>
-        <div className="flex flex-wrap my-20 items-center justify-center gap-10">
+        <div className="flex flex-wrap my-20 items-center justify-center gap-10 max-w-[1300px] mx-auto">
           {rooms.map((room) => (
             <RoomCard key={room.id} room={room} />
           ))}

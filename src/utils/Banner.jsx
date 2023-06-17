@@ -147,11 +147,11 @@ const Banner = () => {
           </NavLink>
         </div>
       </div>
-      <div className="relative h-[120vh] md:min-h-[100vh] mt-24 lg:m-0">
+      <div className="relative h-[120vh] md:h-[130vh] xl:max-h-[100vh] mt-24 lg:m-0">
         {/* Laptop Navbar */}
         <div className=" relative top-0 bg-homeBg  w-full h-full bg-center bg-cover bg-no-repeat rounded-[20px]">
           <div className=" relative max-w-[1300px] h-[15%] mx-auto">
-            <div className="hidden lg:flex min-w-full items-center justify-between absolute z-50 text-black px-[40px] xl:px-[90px] top-8">
+            <div className="hidden lg:flex min-w-full items-center justify-between absolute z-50 text-black px-10  xl:px-0   top-8">
               <div className=" text-white flex items-center gap-5">
                 <div className="flex items-center gap-2 text-[15px]">
                   <BsTelephone />
@@ -178,7 +178,7 @@ const Banner = () => {
               </div>
             </div>
 
-            <div className="hidden lg:flex min-w-full items-center absolute z-50 text-black px-[40px] xl:px-[90px] justify-between top-20">
+            <div className="hidden lg:flex min-w-full items-center absolute z-50 text-black px-10 xl:px-0   justify-between top-20">
               <Link to="/">
                 <img src={logo} alt="" className="w-[147px] h-[37px] mb-3" />
               </Link>
@@ -310,7 +310,7 @@ const Banner = () => {
                 </motion.p>
               </div>
 
-              <form className=" absolute bottom-0 md:bottom-10 flex flex-col xl:flex-row gap-3 flex-wrap">
+              <form className=" absolute bottom-3 md:bottom-10 2xl:bottom-[25%] flex flex-col xl:flex-row gap-3 flex-wrap">
                 <div>
                   <div className="md:flex gap-[10px]">
                     <div className=" md:w-1/2 bg-white py-[15px] px-[25px] rounded-md mb-3 md:mb-0">
