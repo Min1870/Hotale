@@ -151,7 +151,7 @@ const Banner = () => {
         {/* Laptop Navbar */}
         <div className=" relative top-0 bg-homeBg  w-full h-full bg-center bg-cover bg-no-repeat rounded-[20px]">
           <div className=" relative max-w-[1300px] h-[15%] mx-auto">
-            <div className="hidden lg:flex min-w-full items-center justify-between absolute z-50 text-black px-10  xl:px-0   top-8">
+            <div className="hidden lg:flex min-w-full items-center justify-between absolute z-50 text-black px-10 xl:px-0 top-8">
               <div className=" text-white flex items-center gap-5">
                 <div className="flex items-center gap-2 text-[15px]">
                   <BsTelephone />
